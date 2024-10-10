@@ -81,7 +81,7 @@ Executing the `nf-core lint` command from within your pipeline repository will p
 
     Execute the `nf-core lint` command to test your pipeline.
 
-**It is expected that some of these tests will fail.**
+    **It is expected that some of these tests will fail.**
 
 ## Updating `nextflow_schema.json`
 

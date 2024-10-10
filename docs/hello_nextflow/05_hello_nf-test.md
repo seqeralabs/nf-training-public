@@ -4,17 +4,19 @@ It is critical for reproducibility and long-term maintenance to have a way to sy
 
 The [nf-test](https://www.nf-test.com/) package provides a testing framework that integrates well with Nextflow and makes it straightforward to add both module-level and workflow-level tests to your pipeline. For more background information, read the [blog post about nf-test](https://nextflow.io/blog/2024/nf-test-in-nf-core.html) on the Nextflow blog.
 
-Note: This part of the training was developed in collaboration with Sateesh Peri, who implemented all the tests.
+!!! note
+
+    This part of the training was developed in collaboration with [Sateesh Peri](https://github.com/sateeshperi), who implemented all the tests.
 
 ---
 
 ## 0. Warmup
 
-We start from a base workflow called `hello-nf-test.nf`, which corresponds to the workflow we produced in Part 3: Hello modules (equivalent to `scripts/hello-modules-3.nf`).
+We start from a base workflow called `hello-nf-test.nf`, which corresponds to the workflow we produced in [Part 3: Hello Modules](https://training.nextflow.io/hello_nextflow/04_hello_modules/) (equivalent to `scripts/hello-modules-3.nf`).
 
 This is a modularized pipeline; the processes are in local modules and the parameter declarations are in a configuration file. If you completed the previous parts of the training course, then you already have everything you need in the working directory. However, if you're just starting from this section, you need to copy the `nextflow.config` file and the `modules` folder from `scripts/` to the `hello-nextflow` directory.
 
-```
+```console
 cd /workspace/gitpod/hello-nextflow
 cp scripts/nextflow.config .
 cp -r scripts/modules .
@@ -32,7 +34,9 @@ tar -zxvf data/ref.tar.gz -C data/
 nextflow run hello-nf-test.nf
 ```
 
-The pipeline takes in three BAM files, each one containing sequencing data for one of three samples from a human family trio (mother, father and son), and outputs a VCF file containing variant calls. For more details, see the previous section of this training.
+The pipeline takes in three BAM files, each one containing sequencing data for one of three samples from a human family trio (mother, father, and son), and outputs a VCF file containing variant calls.
+
+For more details, see the previous section of this training.
 
 ### 0.2 Initialize nf-test
 
@@ -53,6 +57,15 @@ Project configured. Configuration is stored in nf-test.config
 ```
 
 It also creates a `tests` directory containing a configuration file stub.
+
+```console title="tests/nextflow.config" linenums="1"
+/*
+========================================================================================
+    Nextflow config file for running tests
+========================================================================================
+*/
+
+```
 
 ---
 
@@ -77,7 +90,7 @@ SUCCESS: Generated 1 test files.
 
 You can navigate to the directory in the file explorer and open the file, which should contain the following code:
 
-```groovy title="tests/modules/local/samtools/index/main.nf.test"
+```groovy title="tests/modules/local/samtools/index/main.nf.test" linenums="1"
 nextflow_process {
 
     name "Test Process SAMTOOLS_INDEX"
@@ -198,7 +211,7 @@ The `params` block in the stub file includes a placeholder for parameters:
 
 _Before:_
 
-```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="11"
+```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="10"
 params {
     // define parameters here. Example:
     // outdir = "tests/results"
@@ -209,7 +222,7 @@ We use it to specify a location for the results to be output, using the default 
 
 _After:_
 
-```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="11"
+```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="10"
 params {
     outdir = "tests/results"
 }
@@ -262,7 +275,7 @@ We can add as many tests as we want inside the same test file for a module.
 
 Try adding the following tests to the module's test file:
 
-```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="27"
+```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="26"
 test("reads_mother [bam]") {
 
     when {
@@ -286,7 +299,7 @@ test("reads_mother [bam]") {
 
 And:
 
-```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="47"
+```groovy title="modules/local/samtools/index/tests/main.nf.test" linenums="45"
 test("reads_father [bam]") {
 
     when {
@@ -341,7 +354,9 @@ SUCCESS: Executed 3 tests in 28.281s
 
 Notice the warning, referring to the effect of the `--update-snapshot` parameter.
 
-Note: Here we are using test data that we used previously to demonstrate the scientific outputs of the pipeline. If we had been planning to operate these tests in a production environment, we would have generated smaller inputs for testing purposes. In general it's important to keep unit tests as light as possible by using the smallest pieces of data necessary and sufficient for evaluating process functionality, otherwise the total runtime can add up quite seriously. A test suite that takes too long to run regularly is a test suite that's likely to get skipped in the interest of convenience.
+!!! note
+
+    Here we are using test data that we used previously to demonstrate the scientific outputs of the pipeline. If we had been planning to operate these tests in a production environment, we would have generated smaller inputs for testing purposes. In general it's important to keep unit tests as light as possible by using the smallest pieces of data necessary and sufficient for evaluating process functionality, otherwise the total runtime can add up quite seriously. A test suite that takes too long to run regularly is a test suite that's likely to get skipped in the interest of convenience.
 
 ---
 
