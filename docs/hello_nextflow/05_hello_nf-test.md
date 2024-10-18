@@ -45,8 +45,8 @@ nf-test init
 This should produce the following output:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 Project configured. Configuration is stored in nf-test.config
@@ -224,14 +224,14 @@ nf-test test modules/local/samtools/index/tests/main.nf.test
 This should produce the following output:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 
 Test Process SAMTOOLS_INDEX
 
-  Test [bc664c47] 'reads_son [bam]' PASSED (10.06s)
+  Test [bc664c47] 'reads_son [bam]' PASSED (5.928s)
   Snapshots:
     1 created [reads_son [bam]]
 
@@ -239,8 +239,16 @@ Test Process SAMTOOLS_INDEX
 Snapshot Summary:
   1 created
 
-SUCCESS: Executed 1 tests in 10.068s
+SUCCESS: Executed 1 tests in 5.935s
 ```
+
+!!! note
+
+    If you get a `java.nio.file.AccessDeniedException` error, remove the work directory with
+    ```
+    sudo rm -rf work/
+    ```
+    and run the test again.
 
 The test verified the first assertion, that the process should complete successfully.
 
@@ -323,20 +331,25 @@ nf-test test modules/local/samtools/index/tests/main.nf.test --update-snapshot
 This should produce the following output:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 Warning: every snapshot that fails during this test run is re-record.
 
 Test Process SAMTOOLS_INDEX
 
-  Test [bc664c47] 'reads_son [bam]' PASSED (9.6s)
-  Test [f413ec92] 'reads_mother [bam]' PASSED (9.138s)
-  Test [99a73481] 'reads_father [bam]' PASSED (9.536s)
+  Test [bc664c47] 'reads_son [bam]' PASSED (5.917s)
+  Test [f413ec92] 'reads_mother [bam]' PASSED (5.448s)
+  Test [99a73481] 'reads_father [bam]' PASSED (5.872s)
+  Snapshots:
+    2 created [reads_father [bam], reads_mother [bam]]
 
 
-SUCCESS: Executed 3 tests in 28.281s
+Snapshot Summary:
+  2 created
+
+SUCCESS: Executed 3 tests in 17.248s
 ```
 
 Notice the warning, referring to the effect of the `--update-snapshot` parameter.
@@ -469,7 +482,7 @@ Then we can refer to the output of that process in the `when` block where we spe
             input[1] = file("${projectDir}/data/ref/ref.fasta")
             input[2] = file("${projectDir}/data/ref/ref.fasta.fai")
             input[3] = file("${projectDir}/data/ref/ref.dict")
-            input[4] = file("${projectDir}/data/intervals.list")
+            input[4] = file("${projectDir}/data/ref/intervals.bed")
             """
         }
     }
@@ -486,14 +499,14 @@ nf-test test modules/local/gatk/haplotypecaller/tests/main.nf.test
 This produces the following output:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 
 Test Process GATK_HAPLOTYPECALLER
 
-  Test [86fd1bce] 'reads_son [bam]' PASSED (19.082s)
+  Test [86fd1bce] 'reads_son [bam]' PASSED (11.073s)
   Snapshots:
     1 created [reads_son [bam]]
 
@@ -501,7 +514,7 @@ Test Process GATK_HAPLOTYPECALLER
 Snapshot Summary:
   1 created
 
-SUCCESS: Executed 1 tests in 19.09s
+SUCCESS: Executed 1 tests in 11.084s
 ```
 
 It also produces a snapshot file like earlier.
@@ -517,14 +530,14 @@ nf-test test modules/local/gatk/haplotypecaller/tests/main.nf.test
 Produces:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 
 Test Process GATK_HAPLOTYPECALLER
 
-  Test [86fd1bce] 'reads_son [bam]' FAILED (23.781s)
+  Test [86fd1bce] 'reads_son [bam]' FAILED (15.209s)
 
   java.lang.RuntimeException: Different Snapshot:
   [                                                                                                     [
@@ -534,8 +547,8 @@ Test Process GATK_HAPLOTYPECALLER
                   {                                                                                                     {
                       "id": "NA12882"                                                                                       "id": "NA12882"
                   },                                                                                                    },
-                  "reads_son.bam.g.vcf:md5,f3583cbbe439469bfc166612e1617694",                      |                    "reads_son.bam.g.vcf:md5,428f855d616b34d44a4f0a3bcc1a0b14",
-                  "reads_son.bam.g.vcf.idx:md5,16a78feaf6602adb2a131494e0274f9e"                           |                    "reads_son.bam.g.vcf.idx:md5,5a8d299625ef3cd3266229507a789dbb"
+                  "reads_son.bam.g.vcf:md5,1715fa260695fe0bde5af5641d962053",                      |                    "reads_son.bam.g.vcf:md5,aa0cb4c2c28d8adcdeeda9323bac5b24",
+                  "reads_son.bam.g.vcf.idx:md5,dbb55a1e7b40340a46f57dd76ef537aa"                           |                    "reads_son.bam.g.vcf.idx:md5,b7c53459ecb4ba757fe84f33f1f9f7ca"
               ]                                                                                                     ]
           ]                                                                                                     ]
       }                                                                                                     }
@@ -545,13 +558,13 @@ Test Process GATK_HAPLOTYPECALLER
 
   Nextflow stderr:
 
-  Nextflow 24.03.0-edge is available - Please consider updating your version to it
+  Nextflow 24.09.2-edge is available - Please consider updating your version to it
 
 
     Obsolete snapshots can only be checked if all tests of a file are executed successful.
 
 
-FAILURE: Executed 1 tests in 23.79s (1 failed)
+FAILURE: Executed 1 tests in 15.223s (1 failed)
 ```
 
 The error message tells you there were differences between the snapshots for the two runs; specifically, the md5sum values are different for the VCF files.
@@ -578,8 +591,8 @@ _After:_
 ```console title="modules/local/gatk/haplotypecaller/tests/main.nf.test" linenums="35"
 then {
     assert process.success
-    assert path(process.out[0][0][1]).readLines().contains('#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA12882')
-    assert path(process.out[0][0][1]).readLines().contains('20	10040001	.	T	<NON_REF>	.	.	END=10040048	GT:DP:GQ:MIN_DP:PL	0/0:40:99:37:0,99,1150')
+    assert path(process.out[0][0][1]).readLines().contains('#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	reads_son')
+    assert path(process.out[0][0][1]).readLines().contains('20_10037292_10066351	3277	.	G	<NON_REF>	.	.	END=3282	GT:DP:GQ:MIN_DP:PL	0/0:25:72:24:0,72,719')
 }
 ```
 
@@ -598,17 +611,17 @@ nf-test test modules/local/gatk/haplotypecaller/tests/main.nf.test
 Produces:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 
 Test Process GATK_HAPLOTYPECALLER
 
-  Test [86fd1bce] 'reads_son [bam]' PASSED (19.765s)
+  Test [86fd1bce] 'reads_son [bam]' PASSED (20.804s)
 
 
-SUCCESS: Executed 1 tests in 19.77s
+SUCCESS: Executed 1 tests in 20.874s
 ```
 
 ### 2.8 Add more test data
@@ -641,15 +654,15 @@ test("reads_mother [bam]") {
             input[1] = file("${projectDir}/data/ref/ref.fasta")
             input[2] = file("${projectDir}/data/ref/ref.fasta.fai")
             input[3] = file("${projectDir}/data/ref/ref.dict")
-            input[4] = file("${projectDir}/data/intervals.list")
+            input[4] = file("${projectDir}/data/ref/intervals.bed")
             """
         }
     }
 
     then {
         assert process.success
-        assert path(process.out[0][0][1]).readLines().contains('#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA12878')
-        assert path(process.out[0][0][1]).readLines().contains('20	10040001	.	T	<NON_REF>	.	.	END=10040013	GT:DP:GQ:MIN_DP:PL	0/0:28:81:27:0,81,829')
+        assert path(process.out[0][0][1]).readLines().contains('#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	reads_mother')
+        assert path(process.out[0][0][1]).readLines().contains('20_10037292_10066351	3277	.	G	<NON_REF>	.	.	END=3278	GT:DP:GQ:MIN_DP:PL	0/0:38:99:37:0,102,1530')
     }
 }
 ```
@@ -680,15 +693,15 @@ test("reads_father [bam]") {
             input[1] = file("${projectDir}/data/ref/ref.fasta")
             input[2] = file("${projectDir}/data/ref/ref.fasta.fai")
             input[3] = file("${projectDir}/data/ref/ref.dict")
-            input[4] = file("${projectDir}/data/intervals.list")
+            input[4] = file("${projectDir}/data/ref/intervals.bed")
             """
         }
     }
 
     then {
         assert process.success
-        assert path(process.out[0][0][1]).readLines().contains('#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA12877')
-        assert path(process.out[0][0][1]).readLines().contains('20	10040001	.	T	<NON_REF>	.	.	END=10040011	GT:DP:GQ:MIN_DP:PL	0/0:30:81:29:0,81,1025')
+        assert path(process.out[0][0][1]).readLines().contains('#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	reads_father')
+        assert path(process.out[0][0][1]).readLines().contains('20_10037292_10066351	3277	.	G	<NON_REF>	.	.	END=3281	GT:DP:GQ:MIN_DP:PL	0/0:44:99:42:0,120,1800')
     }
 }
 ```
@@ -702,19 +715,19 @@ nf-test test modules/local/gatk/haplotypecaller/tests/main.nf.test
 Produces:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 
 Test Process GATK_HAPLOTYPECALLER
 
-  Test [86fd1bce] 'reads_son [bam]' PASSED (21.639s)
-  Test [547788fd] 'reads_mother [bam]' PASSED (18.153s)
-  Test [be786719] 'reads_father [bam]' PASSED (18.058s)
+  Test [86fd1bce] 'reads_son [bam]' PASSED (10.826s)
+  Test [547788fd] 'reads_mother [bam]' PASSED (10.999s)
+  Test [be786719] 'reads_father [bam]' PASSED (10.799s)
 
 
-SUCCESS: Executed 3 tests in 57.858s
+SUCCESS: Executed 3 tests in 32.657s
 ```
 
 That completes the basic test plan for this second step in the pipeline. On to the third and last!
@@ -830,7 +843,7 @@ test("family_trio [vcf] [idx]") {
             input[2] = file("${projectDir}/data/ref/ref.fasta")
             input[3] = file("${projectDir}/data/ref/ref.fasta.fai")
             input[4] = file("${projectDir}/data/ref/ref.dict")
-            input[5] = file("${projectDir}/data/intervals.list")
+            input[5] = file("${projectDir}/data/ref/intervals.bed")
             """
         }
     }
@@ -844,7 +857,7 @@ The output of the joint genotyping step is another VCF file, so we're going to u
 then {
     assert process.success
     assert path(process.out[0][0]).readLines().contains('#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA12877	NA12878	NA12882')
-    assert path(process.out[0][0]).readLines().contains('20	10040772	.	C	CT	1568.89	.	AC=5;AF=0.833;AN=6;BaseQRankSum=0.399;DP=82;ExcessHet=0.0000;FS=4.291;MLEAC=5;MLEAF=0.833;MQ=60.00;MQRankSum=0.00;QD=21.79;ReadPosRankSum=-9.150e-01;SOR=0.510	GT:AD:DP:GQ:PL	0/1:14,16:30:99:370,0,348	1/1:0,17:17:51:487,51,0	1/1:0,25:25:75:726,75,0')
+    assert path(process.out[0][0]).readLines().contains('20_10037292_10066351	3480	.	C	CT	1625.89	.	AC=5;AF=0.833;AN=6;BaseQRankSum=0.220;DP=85;ExcessHet=0.0000;FS=2.476;MLEAC=5;MLEAF=0.833;MQ=60.00;MQRankSum=0.00;QD=21.68;ReadPosRankSum=-1.147e+00;SOR=0.487	GT:AD:DP:GQ:PL	0/1:15,16:31:99:367,0,375	1/1:0,18:18:54:517,54,0	1/1:0,26:26:78:756,78,0')
 }
 ```
 
@@ -857,17 +870,17 @@ nf-test test modules/local/gatk/jointgenotyping/tests/main.nf.test
 Produces:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 
 Test Process GATK_JOINTGENOTYPING
 
-  Test [24c3cb4b] 'family_trio [vcf] [idx]' PASSED (14.881s)
+  Test [24c3cb4b] 'family_trio [vcf] [idx]' PASSED (10.945s)
 
 
-SUCCESS: Executed 1 tests in 14.885s
+SUCCESS: Executed 1 tests in 10.952s
 ```
 
 It works! And that's it for module-level tests for our pipeline.
@@ -925,17 +938,17 @@ nf-test test tests/hello-nf-test.nf.test
 This produces:
 
 ```bash
-🚀 nf-test 0.8.4
-https://code.askimed.com/nf-test
+🚀 nf-test 0.9.0
+https://www.nf-test.com
 (c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
 
 
 Test Workflow hello-nf-test.nf
 
-  Test [df3a3a8c] 'Should run without failures' PASSED (62.493s)
+  Test [df3a3a8c] 'Should run without failures' PASSED (33.485s)
 
 
-SUCCESS: Executed 1 tests in 62.498s
+SUCCESS: Executed 1 tests in 33.492s
 ```
 
 That's it! If necessary, more nuanced assertions can be added to test for the validity and content of the pipeline outputs. You can learn more about the different kinds of assertions you can use in the [nf-test documentation](https://www.nf-test.com/docs/assertions/assertions/).

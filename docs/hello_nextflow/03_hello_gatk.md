@@ -285,10 +285,10 @@ If you check the work directory, you'll find the output file `reads_mother.bam.g
 
 !!! note
 
-    A GVCF is a special kind of VCF that contains non-variant records as well as variant calls. The first actual variant call in this file occurs at line 325:
+    A GVCF is a special kind of VCF that contains non-variant records as well as variant calls. The first actual variant call in this file occurs at line 175:
 
     ```
-    20 10040772 . C CT,<NON_REF> 473.03 . DP=22;ExcessHet=0.0000;MLEAC=2,0;MLEAF=1.00,0.00;RAW_MQandDP=79200,22 GT:AD:DP:GQ:PL:SB 1/1:0,17,0:17:51:487,51,0,488,51,488:0,0,7,10
+    20_10037292_10066351	3480	.	C	CT,<NON_REF>	503.03	.	DP=23;ExcessHet=0.0000;MLEAC=2,0;MLEAF=1.00,0.00;RAW_MQandDP=82800,23	GT:AD:DP:GQ:PL:SB	1/1:0,18,0:18:54:517,54,0,517,54,517:0,0,7,11
     ```
 
 ### Takeaway
@@ -436,7 +436,7 @@ Make it easier to handle samples in bulk.
 
 ## 4. Make it nicer to run on arbitrary samples by using a list of files as input
 
-#### 4.1. Create a text file listing the input paths
+#### 4.1. Look at the `data/sample_bam.txt` text file, which is listing the input paths
 
 ```csv title="sample_bams.txt"
 /workspace/gitpod/hello-nextflow/data/bam/reads_mother.bam
