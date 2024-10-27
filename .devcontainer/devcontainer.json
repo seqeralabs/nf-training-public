@@ -1,6 +1,9 @@
 {
     "name": "nfcore",
-    "image": "nfcore/gitpod:latest",
+    "build": {
+        "dockerfile": "devcontainer.Dockerfile",
+        "context": "."
+    },
     "remoteUser": "gitpod",
 
     // Configure tool-specific properties.
@@ -21,7 +24,11 @@
             },
 
             // Add the IDs of extensions you want installed when the container is created.
-            "extensions": ["ms-python.python", "ms-python.vscode-pylance", "nf-core.nf-core-extensionpack"]
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "nf-core.nf-core-extensionpack"
+            ]
         }
     },
     "portsAttributes": {

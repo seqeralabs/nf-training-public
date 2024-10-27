@@ -15,10 +15,14 @@ RUN apt-get update --quiet && \
         curl \
         tree \
         graphviz \
+        slurm \
         slurmd \
         slurmctld \
-        software-properties-common
+        software-properties-common && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+COPY ./slurm.conf /etc/slurm/slurm.conf
 
 # Taken from: https://github.com/nf-core/tools/blob/master/nf_core/gitpod/gitpod.Dockerfile
 # Install Apptainer (Singularity)
