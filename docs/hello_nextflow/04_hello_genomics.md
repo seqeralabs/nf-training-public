@@ -14,7 +14,7 @@ Specifically, we show you how to implement a simple variant calling pipeline wit
 ### Method overview
 
 Variant calling is a genomic analysis method that aims to identify variations in a genome sequence relative to a reference genome.
-Here we are going to use tools and methods designed for calling short variants, _i.e._ SNPs and indels.
+Here we are going to use tools and methods designed for calling short variants, _i.e._ SNPs and indels (insertions and deletions).
 
 ![GATK pipeline](img/gatk-pipeline.png)
 
