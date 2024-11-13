@@ -1,21 +1,20 @@
 #!/usr/bin/env nextflow
+workflow {
+
+    // emit a greeting
+    sayHello()
+}
+
 
 /*
  * Use echo to print 'Hello World!' to standard out
  */
 process sayHello {
-
     output:
-        stdout
+    stdout
 
     script:
     """
     echo 'Hello World!'
     """
-}
-
-workflow {
-
-    // emit a greeting
-    sayHello()
 }

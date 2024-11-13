@@ -8,50 +8,11 @@ params.input_file = "containers/data/greetings.csv"
 // 'meow', 'miki', 'milk', 'octopus', 'pig', 'stegosaurus', 'stimpy', 'trex', 'turkey', 'turtle', 'tux'
 params.character = "cow"
 
-/*
- * Use echo to print 'Hello World!' to standard out
- */
-process sayHello {
-
-    publishDir 'containers/results', mode: 'copy'
-
-    input:
-        val greeting
-
-    output:
-        path "output-*.txt"
-
-    script:
-        // Replace the spaces in the greeting with hyphens for the output filename
-        def safe_greeting = greeting.tokenize(' ').join('-')
-        """
-        echo '$greeting' > 'output-${safe_greeting}.txt'
-        """
-}
-
-/*
- * Use a cow (or other character) to say some text
- */
-process cowSay {
-
-    publishDir 'containers/results', mode: 'copy'
-
-    input:
-        path input_file
-
-    output:
-        path "cowsay-*"
-
-    script:
-    """
-    cowsay -c "$params.character" -t "\$(cat $input_file)" > cowsay-${input_file}
-    """
-}
-
 workflow {
 
     // create a channel for inputs from a CSV file
-    input_ch = Channel.fromPath(params.input_file)
+    input_ch = Channel
+        .fromPath(params.input_file)
         .splitCsv()
         .flatten()
 
@@ -59,4 +20,42 @@ workflow {
 
     // cowSay the text
     cowSay(sayHello.out)
+}
+
+/*
+ * Use echo to print 'Hello World!' to standard out
+ */
+process sayHello {
+    publishDir 'containers/results', mode: 'copy'
+
+    input:
+    val greeting
+
+    output:
+    path "output-*.txt"
+
+    script:
+    // Replace the spaces in the greeting with hyphens for the output filename
+    def safe_greeting = greeting.tokenize(' ').join('-')
+    """
+        echo '${greeting}' > 'output-${safe_greeting}.txt'
+        """
+}
+
+/*
+ * Use a cow (or other character) to say some text
+ */
+process cowSay {
+    publishDir 'containers/results', mode: 'copy'
+
+    input:
+    path input_file
+
+    output:
+    path "cowsay-*"
+
+    script:
+    """
+    cowsay -c "${params.character}" -t "\\$(cat ${input_file})" > cowsay-${input_file}
+    """
 }

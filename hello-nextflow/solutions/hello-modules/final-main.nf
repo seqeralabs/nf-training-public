@@ -11,10 +11,10 @@ workflow {
     reads_ch = Channel.fromPath(params.reads_bam).splitText()
 
     // Load the file paths for the accessory files (reference and intervals)
-    ref_file        = file(params.reference)
-    ref_index_file  = file(params.reference_index)
-    ref_dict_file   = file(params.reference_dict)
-    intervals_file  = file(params.intervals)
+    ref_file = file(params.reference)
+    ref_index_file = file(params.reference_index)
+    ref_dict_file = file(params.reference_dict)
+    intervals_file = file(params.intervals)
 
     // Create index file for input BAM file
     SAMTOOLS_INDEX(reads_ch)

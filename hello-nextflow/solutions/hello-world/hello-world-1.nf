@@ -1,16 +1,15 @@
 #!/usr/bin/env nextflow
+workflow {
+    sayHello()
+}
+
 
 process sayHello {
-
     output:
-        stdout
+    stdout
 
     script:
     """
     echo 'Hello World!'
     """
-}
-
-workflow {
-    sayHello()
 }
