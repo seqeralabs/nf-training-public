@@ -7,6 +7,9 @@
     },
     "workspaceFolder": "${localWorkspaceFolder}",
     "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace/gitpod,type=bind"
+    ],
     "remoteEnv": {
         "NXF_HOME": "/workspaces/.nextflow",
         "HOST_PROJECT_PATH": "${localWorkspaceFolder}"
@@ -37,3 +40,4 @@
     },
     "postCreateCommand": "mkdir -p /workspace && ln -s /workspaces /workspace/gitpod"
 }
+
