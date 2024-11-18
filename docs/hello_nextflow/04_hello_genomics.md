@@ -55,7 +55,7 @@ The tools we need (Samtools and GATK) are not installed in the Gitpod environmen
 !!! note
 
      Make sure you're in the correct working directory:
-     `cd /workspace/gitpod/hello-nextflow`
+     `pwd` should return a path ending in `hello-nextflow`
 
 ### 0.1. Index a BAM input file with Samtools
 
@@ -568,9 +568,9 @@ This error will not reproduce consistently because it is dependent on some varia
 This is what the output of the two `.view` calls we added looks like for a failed run:
 
 ```console title="Output"
-/workspace/gitpod/hello-nextflow/data/bam/reads_mother.bam
-/workspace/gitpod/hello-nextflow/data/bam/reads_father.bam
-/workspace/gitpod/hello-nextflow/data/bam/reads_son.bam
+./data/bam/reads_mother.bam
+./data/bam/reads_father.bam
+./data/bam/reads_son.bam
 /workspace/gitpod/hello-nextflow/work/9c/53492e3518447b75363e1cd951be4b/reads_father.bam.bai
 /workspace/gitpod/hello-nextflow/work/cc/37894fffdf6cc84c3b0b47f9b536b7/reads_son.bam.bai
 /workspace/gitpod/hello-nextflow/work/4d/dff681a3d137ba7d9866e3d9307bd0/reads_mother.bam.bai
@@ -724,9 +724,9 @@ Here we are going to show you how to do the simple case.
 We already made a text file listing the input file paths, called `sample_bams.txt`, which you can find in the `data/` directory.
 
 ```txt title="sample_bams.txt"
-/workspace/gitpod/hello-nextflow/data/bam/reads_mother.bam
-/workspace/gitpod/hello-nextflow/data/bam/reads_father.bam
-/workspace/gitpod/hello-nextflow/data/bam/reads_son.bam
+/data/bam/reads_mother.bam
+/data/bam/reads_father.bam
+/data/bam/reads_son.bam
 ```
 
 As you can see, we listed one file path per line, and they are absolute paths.
@@ -764,7 +764,7 @@ This way we can continue to be lazy, but the list of files no longer lives in th
 Currently, our input channel factory treats any files we give it as the data inputs we want to feed to the indexing process.
 Since we're now giving it a file that lists input file paths, we need to change its behavior to parse the file and treat the file paths it contains as the data inputs.
 
-Fortunately we can do that very simply, just by adding the [`.splitText()` operator](https://www.nextflow.io/docs/latest/reference/operator.html#operator-splittext) to the channel construction step.
+We are going to use the [`.splitCsv()`](https://www.nextflow.io/docs/latest/operator.html#operator-splitcsv) operator to parse the file into lines, and then use `.map()` to convert each line into a file path object. This introduces some advanced concepts that we'll explain in more detail later in this training series, but for now it's enough to understand that we can manipulate the contents of the samplesheet after we read it in but before we use it.
 
 _Before:_
 
@@ -775,9 +775,11 @@ reads_ch = Channel.fromPath(params.reads_bam)
 
 _After:_
 
-```groovy title="hello-genomics.nf" linenums="68"
+````groovy title="hello-genomics.nf" linenums="68"
 // Create input channel from a text file listing input file paths
-reads_ch = Channel.fromPath(params.reads_bam).splitText()
+reads_ch = Channel.fromPath(params.reads_bam)
+                .splitCsv()
+                .map { bamPath -> file(bamPath[0]) }
 ```
 
 !!! tip
@@ -790,7 +792,7 @@ Let's run the workflow one more time.
 
 ```bash
 nextflow run hello-genomics.nf -resume
-```
+````
 
 This should produce the same result as before, right?
 

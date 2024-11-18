@@ -55,7 +55,7 @@ process GATK_HAPLOTYPECALLER {
 
     output:
         path "${input_bam}.g.vcf"     , emit: vcf
-        path "${input_bam}.g.vcf.idx" , emit: idx 
+        path "${input_bam}.g.vcf.idx" , emit: idx
 
     script:
     """
@@ -99,7 +99,9 @@ process GATK_GENOMICSDB {
 workflow {
 
     // Create input channel from a text file listing input file paths
-    reads_ch = Channel.fromPath(params.reads_bam).splitText()
+    reads_ch = Channel.fromPath(params.reads_bam)
+                    .splitCsv()
+                    .map { bamPath -> file(bamPath[0]) }
 
     // Load the file paths for the accessory files (reference and intervals)
     ref_file        = file(params.reference)

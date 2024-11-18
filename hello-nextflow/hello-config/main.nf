@@ -112,7 +112,9 @@ process GATK_JOINTGENOTYPING {
 workflow {
 
     // Create input channel from a text file listing input file paths
-    reads_ch = Channel.fromPath(params.reads_bam).splitText()
+    reads_ch = Channel.fromPath(params.reads_bam)
+                    .splitCsv()
+                    .map { bamPath -> file(bamPath[0]) }
 
     // Load the file paths for the accessory files (reference and intervals)
     ref_file        = file(params.reference)
