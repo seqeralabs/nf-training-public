@@ -1,3 +1,3 @@
-/workspace/gitpod/hello-nextflow/data/bam/reads_mother.bam
-/workspace/gitpod/hello-nextflow/data/bam/reads_father.bam
-/workspace/gitpod/hello-nextflow/data/bam/reads_son.bam
+/workspaces/training/hello-nextflow/data/bam/reads_mother.bam
+/workspaces/training/hello-nextflow/data/bam/reads_father.bam
+/workspaces/training/hello-nextflow/data/bam/reads_son.bam

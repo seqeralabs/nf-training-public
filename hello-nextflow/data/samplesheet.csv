@@ -1,4 +1,4 @@
 id,reads_bam
-NA12878,/workspace/gitpod/hello-nextflow/data/bam/reads_mother.bam
-NA12877,/workspace/gitpod/hello-nextflow/data/bam/reads_father.bam
-NA12882,/workspace/gitpod/hello-nextflow/data/bam/reads_son.bam
+NA12878,/workspaces/training/hello-nextflow/data/bam/reads_mother.bam
+NA12877,/workspaces/training/hello-nextflow/data/bam/reads_father.bam
+NA12882,/workspaces/training/hello-nextflow/data/bam/reads_son.bam
