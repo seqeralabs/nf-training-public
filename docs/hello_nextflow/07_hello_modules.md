@@ -337,7 +337,7 @@ process GATK_JOINTGENOTYPING {
         path "${cohort_name}.joint.vcf.idx" , emit: idx
 
     script:
-        def gvcfs_line = all_gvcfs.collect { gvcf -> "-V ${gvcf}" }.join(' ')
+    def gvcfs_line = all_gvcfs.collect { gvcf -> "-V ${gvcf}" }.join(' ')
     """
     gatk GenomicsDBImport \
         ${gvcfs_line} \

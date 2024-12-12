@@ -427,7 +427,7 @@ For the `quote` container image, you can either use the one you built yourself i
 
     A good choice for the `script` block of your getQuote process might be:
         ```groovy
-        script:
+            script:
             def safe_author = author.tokenize(' ').join('-')
             """
             quote "$author" > quote-${safe_author}.txt

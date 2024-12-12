@@ -254,17 +254,17 @@ This is the same change we made when we ran the command directly in the terminal
 _Before:_
 
 ```groovy title="hello-world.nf" linenums="11"
-"""
-echo 'Hello World!'
-"""
+    """
+    echo 'Hello World!'
+    """
 ```
 
 _After:_
 
 ```groovy title="hello-world.nf" linenums="11"
-"""
-echo 'Hello World!' > output.txt
-"""
+    """
+    echo 'Hello World!' > output.txt
+    """
 ```
 
 ### 3.2. Change the output declaration in the `sayHello` process
@@ -483,17 +483,17 @@ Now we swap the original hardcoded value for the input variable.
 _Before:_
 
 ```groovy title="hello-world.nf" linenums="16"
-"""
-echo 'Hello World!' > output.txt
-"""
+    """
+    echo 'Hello World!' > output.txt
+    """
 ```
 
 _After:_
 
 ```groovy title="hello-world.nf" linenums="16"
-"""
-echo '$greeting' > output.txt
-"""
+    """
+    echo '$greeting' > output.txt
+    """
 ```
 
 ### 5.3. Create an input channel

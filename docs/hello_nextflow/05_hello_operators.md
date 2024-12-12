@@ -736,24 +736,24 @@ The second command requires the reference genome files, so we need to add those 
 _Before:_
 
 ```groovy title="hello-operators.nf" linenums="78"
-input:
-    path all_gvcfs
-    path all_idxs
-    path interval_list
-    val cohort_name
+    input:
+        path all_gvcfs
+        path all_idxs
+        path interval_list
+        val cohort_name
 ```
 
 _After:_
 
 ```groovy title="hello-operators.nf" linenums="78"
-input:
-    path all_gvcfs
-    path all_idxs
-    path interval_list
-    val cohort_name
-    path ref_fasta
-    path ref_index
-    path ref_dict
+    input:
+        path all_gvcfs
+        path all_idxs
+        path interval_list
+        val cohort_name
+        path ref_fasta
+        path ref_index
+        path ref_dict
 ```
 
 It may seem annoying to type these out, but remember, you only type them once, and then you can run the workflow a million times. Worth it?

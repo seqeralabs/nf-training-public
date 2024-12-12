@@ -628,16 +628,16 @@ Specifically, where we previously declared two separate input paths in the input
 _Before:_
 
 ```groovy title="hello-genomics.nf" linenums="49"
-input:
-    path input_bam
-    path input_bam_index
+    input:
+        path input_bam
+        path input_bam_index
 ```
 
 _After:_
 
 ```groovy title="hello-genomics.nf" linenums="49"
-input:
-    tuple path(input_bam), path(input_bam_index)
+    input:
+        tuple path(input_bam), path(input_bam_index)
 ```
 
 Of course, since we've now changed the shape of the inputs that `GATK_HAPLOTYPECALLER` expects, we need to update the process call accordingly in the workflow body.
