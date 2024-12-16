@@ -467,7 +467,7 @@ Does that seem a bit complicated? Let's break this down and translate it into pl
 
 !!!tip
 
-    If you're having a hard time envisioning exactly what is happening here, remember that you can use the `view()` operator to inspect the contents of channels before and after applying channel operators.
+    If you're having a hard time envisioning exactly what is happening here, remember that you can use the `dump()` operator to inspect the contents of channels before and after applying channel operators.
 
 The resulting `all_gvcfs_ch` and `all_idxs_ch` channels are what we're going to plug into the `GATK_GENOMICSDB` process we just wrote.
 
