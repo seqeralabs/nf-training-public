@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+    - name: Ask for help
+      url: https://community.seqera.io/c/help/37
+      about: If you are learning Nextflow and need help with the content, ask your questions in the Seqera community forum.

@@ -1,0 +1,48 @@
+name: Bug Report
+description: Report a problem in the training materials.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for taking the time to report a problem in the training materials.
+              Note: If you are learning Nextflow and need help with the content, ask your questions in the [Seqera community forum](https://community.seqera.io/c/help/37).
+    - type: input
+      id: version
+      attributes:
+          label: Training materials version
+          description: What's the git commit hash of the training materials you are using?
+          placeholder: ex. email@example.com
+      validations:
+          required: false
+    - type: textarea
+      id: whats-wrong
+      attributes:
+          label: What's wrong?
+          description: What's the problem in the training materials?
+          placeholder: Tell us what you see!
+          value: "A bug happened!"
+      validations:
+          required: true
+    - type: textarea
+      id: nextflow-code
+      attributes:
+          label: Nextflow code
+          description: |
+              If relevant, please copy and paste the Nextflow code that you used or constructed following the training materials directions.
+              This will be automatically formatted as Nextflow, so no need for backticks.
+          render: nextflow
+    - type: textarea
+      id: logs
+      attributes:
+          label: Relevant log output
+          description: |
+              Please copy and paste any relevant log output.
+              This will be automatically formatted as shell output, so no need for backticks.
+          render: shell
+    - type: textarea
+      id: additional-info
+      attributes:
+          label: Additional Info
+          description: Any additional information that you think might be helpful.
