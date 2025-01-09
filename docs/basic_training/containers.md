@@ -224,8 +224,8 @@ docker run my-image \
 
 To mount a filesystem within a Docker container, you can use the `--volume` command-line option when running the container. Its argument consists of two fields separated by a colon (:):
 
-- Host source directory path
-- Container target directory path
+-   Host source directory path
+-   Container target directory path
 
 For example:
 

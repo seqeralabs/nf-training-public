@@ -29,11 +29,11 @@ Realizamos un evento de capacitación en línea gratuito para este curso aproxim
 Si el inglés no es su idioma preferido, puede resultarle útil seguir la capacitación del [evento de marzo de 2023](https://nf-co.re/events/2023/training-march-2023), que realizamos en múltiples idiomas.
 Tenga en cuenta que algunas partes del material de capacitación pueden haberse actualizado desde que se registró.
 
-- :flag_gb: [En Inglés](https://youtube.com/playlist?list=PL3xpfTVZLcNhoWxHR0CS-7xzu5eRT8uHo)
-- :flag_in: [En Hindú](https://youtube.com/playlist?list=PL3xpfTVZLcNikun1FrSvtXW8ic32TciTJ)
-- :flag_es: [En Español](https://youtube.com/playlist?list=PL3xpfTVZLcNhSlCWVoa3GURacuLWeFc8O)
-- :flag_pt: [En Portugues](https://youtube.com/playlist?list=PL3xpfTVZLcNhi41yDYhyHitUhIcUHIbJg)
-- :flag_fr: [En Francés](https://youtube.com/playlist?list=PL3xpfTVZLcNhiv9SjhoA1EDOXj9nzIqdS)
+-   :flag_gb: [En Inglés](https://youtube.com/playlist?list=PL3xpfTVZLcNhoWxHR0CS-7xzu5eRT8uHo)
+-   :flag_in: [En Hindú](https://youtube.com/playlist?list=PL3xpfTVZLcNikun1FrSvtXW8ic32TciTJ)
+-   :flag_es: [En Español](https://youtube.com/playlist?list=PL3xpfTVZLcNhSlCWVoa3GURacuLWeFc8O)
+-   :flag_pt: [En Portugues](https://youtube.com/playlist?list=PL3xpfTVZLcNhi41yDYhyHitUhIcUHIbJg)
+-   :flag_fr: [En Francés](https://youtube.com/playlist?list=PL3xpfTVZLcNhiv9SjhoA1EDOXj9nzIqdS)
 
 ## Descripción general
 

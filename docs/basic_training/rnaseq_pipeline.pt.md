@@ -570,7 +570,7 @@ As etiquetas permitem o controle preciso das alterações nos arquivos e depend�
 
 ## Mais recursos
 
-- [Documentação do Nextflow](http://docs.nextflow.io) - A página inicial dos documentos do Nextflow.
-- [Nextflow patterns](https://github.com/nextflow-io/patterns) - Uma coleção de padrões de implementação do Nextflow.
-- [CalliNGS-NF](https://github.com/CRG-CNAG/CalliNGS-NF) - Um fluxo de trabalho de chamada de variante implementando as melhores práticas recomendadas do GATK.
-- [nf-core](http://nf-co.re/) - Uma coleção comunitária de fluxos de trabalho genômicos prontos para produção.
+-   [Documentação do Nextflow](http://docs.nextflow.io) - A página inicial dos documentos do Nextflow.
+-   [Nextflow patterns](https://github.com/nextflow-io/patterns) - Uma coleção de padrões de implementação do Nextflow.
+-   [CalliNGS-NF](https://github.com/CRG-CNAG/CalliNGS-NF) - Um fluxo de trabalho de chamada de variante implementando as melhores práticas recomendadas do GATK.
+-   [nf-core](http://nf-co.re/) - Uma coleção comunitária de fluxos de trabalho genômicos prontos para produção.

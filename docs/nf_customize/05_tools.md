@@ -101,15 +101,15 @@ nf-core pipelines download
 
 The download tool will interactively prompt you for the required information is no arguments are supplied. Each prompt option has a flag and if all flags are supplied then it will run without a request for any additional user input:
 
-- **Pipeline name**
-    - Name of pipeline you would like to download.
-- **Pipeline revision**
-    - The revision you would like to download.
-- **Pull containers**
-    - If you would like to download Singularity images.
-    - The path to a folder where you would like to store these images if you have not set your `NXF_SINGULARITY_CACHEDIR`.
-- **Choose compression type**
-    - The compression type for Singularity images.
+-   **Pipeline name**
+    -   Name of pipeline you would like to download.
+-   **Pipeline revision**
+    -   The revision you would like to download.
+-   **Pull containers**
+    -   If you would like to download Singularity images.
+    -   The path to a folder where you would like to store these images if you have not set your `NXF_SINGULARITY_CACHEDIR`.
+-   **Choose compression type**
+    -   The compression type for Singularity images.
 
 Alternatively, you could build your own execution command with the command line options.
 

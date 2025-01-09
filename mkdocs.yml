@@ -11,16 +11,31 @@ nav:
           - envsetup/02_local.md
     - Hello Nextflow:
           - hello_nextflow/index.md
-          - hello_nextflow/01_orientation.md
-          - hello_nextflow/02_hello_world.md
-          - hello_nextflow/03_hello_containers.md
-          - hello_nextflow/04_hello_genomics.md
-          - hello_nextflow/05_hello_operators.md
+          - hello_nextflow/00_orientation.md
+          - hello_nextflow/01_hello_world.md
+          - hello_nextflow/02_hello_channels.md
+          - hello_nextflow/03_hello_plumbing.md
+          - hello_nextflow/04_hello_modules.md
+          - hello_nextflow/05_hello_containers.md
           - hello_nextflow/06_hello_config.md
-          - hello_nextflow/07_hello_modules.md
-          - hello_nextflow/08_hello_nf-test.md
-          - hello_nextflow/09_hello_nf-core.md
-          - hello_nextflow/10_hello_seqera.md
+    - Run Nextflow:
+          - run_nextflow/index.md
+          - run_nextflow/01_orientation.md
+          - run_nextflow/02_run_basics.md
+          - run_nextflow/03_run_nf-core.md
+          - run_nextflow/04_run_seqera.md
+    - Nextflow for Genomics:
+          - nf4_genomics/index.md
+          - nf4_genomics/01_orientation.md
+          - nf4_genomics/02_linear.md
+          - nf4_genomics/03_collect.md
+          - nf4_genomics/04_config.md
+          - nf4_genomics/05_testing.md
+    - Side Quests:
+          - side_quests/index.md
+          - side_quests/orientation.md
+          - side_quests/containers.md
+          - side_quests/if_else.md
     - Fundamentals Training:
           - basic_training/index.md
           - basic_training/orientation.md
@@ -48,28 +63,6 @@ nav:
           - advanced/configuration.md
           - advanced/summary.md
           - advanced/support.md
-    - Configure nf-core:
-          - nf_customize/index.md
-          - nf_customize/01_orientation.md
-          - nf_customize/02_nf-core.md
-          - nf_customize/03_execution.md
-          - nf_customize/04_config.md
-          - nf_customize/05_tools.md
-    - Develop nf-core:
-          - nf_develop/index.md
-          - nf_develop/1_01_orientation.md
-          - nf_develop/1_02_create.md
-          - nf_develop/1_03_pipeline.md
-          - nf_develop/1_04_parameters.md
-    - Troubleshooting:
-          - troubleshoot/index.md
-          - troubleshoot/01_orientation.md
-          - troubleshoot/01_exercise.md
-          - troubleshoot/02_exercise.md
-          - troubleshoot/03_exercise.md
-          - troubleshoot/04_exercise.md
-          - troubleshoot/05_exercise.md
-          - troubleshoot/06_exercise.md
 
 theme:
     name: material
@@ -167,11 +160,9 @@ plugins:
           restart_increment_after:
               - envsetup/01_setup.md
               - hello_nextflow/01_orientation.md
-              - basic_training/orientation.md
-              - advanced/orientation.md
-              - nf_customize/01_orientation.md
-              - nf_develop/1_01_orientation.md
-              - troubleshoot/01_orientation.md
+              - run_nextflow/01_orientation.md
+              - side_quests/01_orientation.md
+              - big_nextflow/01_orientation.md
 
           exclude:
               - index.md
@@ -186,6 +177,11 @@ plugins:
               - hands_on/index.md
               - hands_on/solutions/*md
               - hello_nextflow/*.md
+              - basic_training/orientation.md
+              - advanced/orientation.md
+              - nf_customize/01_orientation.md
+              - nf_develop/1_01_orientation.md
+              - troubleshoot/01_orientation.md
     - i18n:
           docs_structure: suffix
           fallback_to_default: true

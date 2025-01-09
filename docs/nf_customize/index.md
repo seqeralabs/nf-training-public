@@ -14,9 +14,9 @@ Let's get started!
 
 By the end of this workshop you will be able to:
 
-- Discuss the ways an nf-core pipeline can be customized
-- Identify the files and code contributing to the default pipeline configuration
-- Utilize nf-core tooling to list, launch, and download pipelines
+-   Discuss the ways an nf-core pipeline can be customized
+-   Identify the files and code contributing to the default pipeline configuration
+-   Utilize nf-core tooling to list, launch, and download pipelines
 
 ## Audience & prerequisites
 
@@ -24,6 +24,6 @@ Please note that this is **not** a beginner's workshop and familiarity with Next
 
 **Prerequisites**
 
-- A GitHub account
-- Experience with command line
-- Experience writing pipelines with Nextflow
+-   A GitHub account
+-   Experience with command line
+-   Experience writing pipelines with Nextflow

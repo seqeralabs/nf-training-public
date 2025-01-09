@@ -16,10 +16,10 @@ In this workshop, you will utilize the nf-core tooling to build a small pipeline
 
 By the end of this workshop you will be able to:
 
-- Discuss the benefits of using the nf-core pipeline template
-- Identify the features of nf-core pipeline template that enable best practices
-- Add nf-core modules to a pipeline using the nf-core tooling
-- Add parameters to a pipeline and update the schema using the nf-core tooling
+-   Discuss the benefits of using the nf-core pipeline template
+-   Identify the features of nf-core pipeline template that enable best practices
+-   Add nf-core modules to a pipeline using the nf-core tooling
+-   Add parameters to a pipeline and update the schema using the nf-core tooling
 
 ## Audience & prerequisites
 
@@ -27,6 +27,6 @@ Please note that this is **not** a beginner's workshop and familiarity with Next
 
 **Prerequisites**
 
-- A GitHub account
-- Experience with command line
-- Experience writing pipelines with Nextflow
+-   A GitHub account
+-   Experience with command line
+-   Experience writing pipelines with Nextflow

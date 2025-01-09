@@ -90,9 +90,9 @@ nextflow run <script> -w /some/scratch/dir
 
 Le code de hachage des fichiers d'entrée est calculé en utilisant :
 
-- le chemin d'accès complet au fichier
-- la taille du fichier
-- l'horodatage de la dernière modification
+-   le chemin d'accès complet au fichier
+-   la taille du fichier
+-   l'horodatage de la dernière modification
 
 Par conséquent, le simple fait de ** toucher** un fichier invalidera l'exécution de la tâche correspondante.
 

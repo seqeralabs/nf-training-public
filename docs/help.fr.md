@@ -13,8 +13,8 @@ Notre formidable communauté est l'une des grandes forces de Nextflow !
 
 Il existe deux instances Slack :
 
-- Nextflow ([register here](https://www.nextflow.io/slack-invite.html))
-- nf-core ([register here](https://nf-co.re/join/slack))
+-   Nextflow ([register here](https://www.nextflow.io/slack-invite.html))
+-   nf-core ([register here](https://nf-co.re/join/slack))
 
 En général, le slack Nextflow est le meilleur car il s'adresse à l'ensemble de la communauté.
 La seule exception est si vous suivez la formation dans le cadre d'un atelier organisé par nf-core, auquel cas on vous aura indiqué où poser vos questions.

@@ -405,9 +405,9 @@ workflow {
 
 Ambos os canais emitem três valores, portanto o processo é executado três vezes, cada vez com um par diferente:
 
-- `(1, a)`
-- `(2, b)`
-- `(3, c)`
+-   `(1, a)`
+-   `(2, b)`
+-   `(3, c)`
 
 O que está acontecendo é que o processo espera até que haja uma configuração de entrada completa, ou seja, recebe um valor de entrada de todos os canais declarados como entrada.
 
@@ -675,9 +675,9 @@ Arquivo: pedaco_ad => a
 
 Algumas advertências sobre o comportamento de padrões de glob:
 
-- Os arquivos de entrada não estão incluídos na lista de possíveis correspondências
-- O padrão glob corresponde tanto a arquivos quanto caminhos de diretório
-- Quando um padrão de duas estrelas `**` é usado para acessar os diretórios, apenas os caminhos de arquivo são correspondidos, ou seja, os diretórios não são incluídos na lista de resultados.
+-   Os arquivos de entrada não estão incluídos na lista de possíveis correspondências
+-   O padrão glob corresponde tanto a arquivos quanto caminhos de diretório
+-   Quando um padrão de duas estrelas `**` é usado para acessar os diretórios, apenas os caminhos de arquivo são correspondidos, ou seja, os diretórios não são incluídos na lista de resultados.
 
 !!! exercise
 

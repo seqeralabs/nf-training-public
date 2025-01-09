@@ -2,11 +2,11 @@ In Part 2 of this workshop, you will use the nf-core tooling to continue develop
 
 By the end of this workshop you will be able to:
 
-- Add local modules
-- Patch nf-core modules
-- Customize linting tests
-- Sync TEMPLATE
-- Bump versions
+-   Add local modules
+-   Patch nf-core modules
+-   Customize linting tests
+-   Sync TEMPLATE
+-   Bump versions
 
 # Customizing the template
 
@@ -122,8 +122,8 @@ As an individual or group, you may want to keep your own library of modules and/
 
 The nf-core modules command comes with two flags for specifying a custom remote:
 
-- `--git-remote <git remote url>`: Specifies the repository from which the modules should be fetched as a git URL.
-- `--branch <branch name>`: Specifies the branch from which the modules should be fetched.
+-   `--git-remote <git remote url>`: Specifies the repository from which the modules should be fetched as a git URL.
+-   `--branch <branch name>`: Specifies the branch from which the modules should be fetched.
 
 Note that a custom remote must follow a similar directory structure to that of `nf-core/modules` for the nf-core commands to work properly.
 
@@ -198,9 +198,9 @@ Having a universal way of versioning the development projects is the best way to
 
 For example, starting with a release version `1.4.3`, bumping the version to:
 
-- `1.4.4` would be a patch release for minor things such as fixing bugs.
-- `1.5` would be a minor release, for example adding some new features.
-- `2.0` would correspond to the major release where results would no longer be backward compatible.
+-   `1.4.4` would be a patch release for minor things such as fixing bugs.
+-   `1.5` would be a minor release, for example adding some new features.
+-   `2.0` would correspond to the major release where results would no longer be backward compatible.
 
 The pipeline version number is mentioned in a lot of different places in nf-core pipelines. The `nf-core bump-version` command updates the version for you automatically, so that you don't accidentally miss any. It can be used for each pipeline release, and again for the next development version after release.
 

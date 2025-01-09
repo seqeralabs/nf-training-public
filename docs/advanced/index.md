@@ -16,12 +16,12 @@ Let's get started!
 
 By the end of this course you should:
 
-- Describe commonly used and well understood operators
-- Apply good practices for the propagation of metadata
-- Group and split channels
-- Apply Groovy helper classes to Nextflow scripts
-- Sensibly structure workflows
-- Apply layers of configuration to a workflow
+-   Describe commonly used and well understood operators
+-   Apply good practices for the propagation of metadata
+-   Group and split channels
+-   Apply Groovy helper classes to Nextflow scripts
+-   Sensibly structure workflows
+-   Apply layers of configuration to a workflow
 
 ## Audience & prerequisites
 
@@ -29,10 +29,10 @@ Please note that this is **not** a beginner's workshop and familiarity with Next
 
 **Prerequisites**
 
-- A GitHub account
-- Experience with command line
-- Familiarity with Nextflow and Groovy
-- An understanding of common file formats
+-   A GitHub account
+-   Experience with command line
+-   Familiarity with Nextflow and Groovy
+-   An understanding of common file formats
 
 ## Follow the training video
 

@@ -87,8 +87,8 @@ sbatch launch_nf.sh /home/my_user/path/my_workflow.nf /home/my_user/path/my_conf
 You can find more details about the example above [here](https://lescailab.unipv.it/guides/eos_guide/use_nextflow.html#large-testing-or-production).
 You can find more tips for running Nextflow on HPC in the following blog posts:
 
-- [5 Nextflow Tips for HPC Users](https://www.nextflow.io/blog/2021/5_tips_for_hpc_users.html)
-- [Five more tips for Nextflow user on HPC](https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html)
+-   [5 Nextflow Tips for HPC Users](https://www.nextflow.io/blog/2021/5_tips_for_hpc_users.html)
+-   [Five more tips for Nextflow user on HPC](https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html)
 
 ### Configure process by name
 

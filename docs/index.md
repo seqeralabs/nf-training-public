@@ -15,9 +15,9 @@ We have several distinct training courses available on this website. Scroll down
 
 The training courses listed below are designed to be useable as a self-service resource; you can work through them on your own at any time (see Environment Setup for practical details). However, you may get even more out of them by joining a group training event.
 
-- Free online events are run regularly by the nf-core community, see the [nf-core events page](https://nf-co.re/events) for more.
-- Seqera (the company that develops Nextflow) runs a variety of training events, see the [Seqera Events](https://seqera.io/events/) page and look for 'Seqera Sessions' and 'Nextflow Summit'.
-- Our Community team also regularly teaches trainings hosted by third party organizations; announcements and signups for those are typically managed by the third-party hosts.
+-   Free online events are run regularly by the nf-core community, see the [nf-core events page](https://nf-co.re/events) for more.
+-   Seqera (the company that develops Nextflow) runs a variety of training events, see the [Seqera Events](https://seqera.io/events/) page and look for 'Seqera Sessions' and 'Nextflow Summit'.
+-   Our Community team also regularly teaches trainings hosted by third party organizations; announcements and signups for those are typically managed by the third-party hosts.
 
 When you're ready to get down to work, click on the 'Open in Gitpod' button, either on this page or on the index page of the course you chose, to open a web-based training environment (requires a free GitHub account).
 
@@ -37,17 +37,55 @@ When you're ready to get down to work, click on the 'Open in Gitpod' button, eit
 
 ## Nextflow for Newcomers
 
+These are foundational, domain-agnostic courses intended for those who are completely new to Nextflow. Each course consists of a series of training modules that are designed to help learners build up their skills progressively.
+
 !!! exercise "Hello Nextflow"
 
     !!! quote inline end ""
 
-        :material-run-fast: A modular training series for getting started with Nextflow.
+        :material-run-fast: A training course for learning to develop pipelines in Nextflow.
 
-    This is a foundational course for those who are completely new to Nextflow. It consists of a series of training modules that are designed to help learners build up their skills progressively. The series covers the core components of the Nextflow language as well as essential pipeline design and development practices, and effective use of third-party resources.
+    This is a course for newcomers who wish to learn how to develop their own pipelines. The course covers the core components of the Nextflow language in enough detail to enable developing simple but fully functional pipelines. It also covers key elements of pipeline design, development and configuration practices.
 
-    [Launch the Hello Nextflow training :material-arrow-right:](hello_nextflow/index.md){ .md-button }
+    [Launch the Hello Nextflow training :material-arrow-right:](hello_nextflow/index.md){ .md-button .md-button--primary }
+
+!!! exercise "Run Nextflow"
+
+    !!! quote inline end ""
+
+        :material-run-fast: A training course for learning to run Nextflow pipelines efficiently.
+
+    This is a course for newcomers who wish to learn how to run existing pipelines. The course covers the bare essentials of the Nextflow language in order to enable interpretation of existing pipelines, as well as the mechanics for configuring and running Nextflow pipelines from a command-line environment. It also covers important components of the Nextflow ecosystem, including the nf-core project, which offers a large number of community-curated pipelines, and the Seqera platform for managing pipeline execution at scale (operated by the creators of Nextflow).
+
+    [Launch the Run Nextflow training :material-arrow-right:](run_nextflow/index.md){ .md-button .md-button--primary }
+
+## Nextflow for Science
+
+These are courses that demonstrate how to apply the concepts and components presented in 'Hello Nextflow' (see above) to specific scientific domains. Each course consists of a series of training modules that are designed to help learners build up their skills progressively.
+
+!!! exercise "Nextflow for Genomics"
+
+    !!! quote inline end ""
+
+        :material-run-fast: A training course for learning to develop genomics pipelines in Nextflow.
+
+    This is a course for researchers who wish to learn how to develop their own genomics pipelines. The course uses a variant calling use case to demonstrate how to develop a simple but functional genomics pipeline.
+
+    [Launch the Nextflow for Genomics training :material-arrow-right:](nf4_genomics/index.md){ .md-button .md-button--primary }
 
 ## In-depth Nextflow Training
+
+These are courses that demonstrate how to use Nextflow features in more detail or at a more advanced level. Each course consists of one or more training modules that are designed to help learners hone their skills on the corresponding topics.
+
+!!! exercise "Side Quests"
+
+    !!! quote inline end ""
+
+        :material-run-fast: Training modules for a variety of topics of interest.
+
+    This is a course for Nextflow developers who wish to widen their range and/or deepen their skills. Although the modules are presented linearly, learners are welcome to pick and choose topics in any order. Any dependencies on components/skills that go beyond the scope of the 'Hello Nextflow' course are indicated in the corresponding module overview.
+
+    [Launch the Side Quests training :material-arrow-right:](side_quests/index.md){ .md-button .md-button--primary }
 
 !!! exercise "Fundamentals Training"
 
@@ -55,7 +93,7 @@ When you're ready to get down to work, click on the 'Open in Gitpod' button, eit
 
         :material-lightbulb: Comprehensive training material for exploring the full scope of Nextflow's capabilities.
 
-    The fundamentals training material covers all things Nextflow. Excellent reference material for anyone looking to build complex workflows with Nextflow.
+    The fundamentals training material covers all things Nextflow. Intended as a reference material for anyone looking to build complex workflows with Nextflow.
 
     [Launch the Fundamentals Training :material-arrow-right:](basic_training/index.md){ .md-button .md-button--primary }
 

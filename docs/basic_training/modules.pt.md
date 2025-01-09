@@ -18,10 +18,10 @@ Os componentes definidos no script do módulo podem ser importados para outros s
 
 Usando o exemplo `hello.nf`, podemos fazer isso:
 
-- Criando um arquivo chamado `modules.nf` no mesmo diretório do `hello.nf`.
-- Copiando e colando as duas definições de processo para `SPLITLETTERS` e `CONVERTTOUPPER` em `modules.nf`.
-- Removendo as definições `process` no script `hello.nf`.
-- Importando os processos de `modules.nf` dentro do script `hello.nf` em qualquer lugar acima da definição de `workflow`:
+-   Criando um arquivo chamado `modules.nf` no mesmo diretório do `hello.nf`.
+-   Copiando e colando as duas definições de processo para `SPLITLETTERS` e `CONVERTTOUPPER` em `modules.nf`.
+-   Removendo as definições `process` no script `hello.nf`.
+-   Importando os processos de `modules.nf` dentro do script `hello.nf` em qualquer lugar acima da definição de `workflow`:
 
 ```groovy linenums="1"
 include { SPLITLETTERS } from './modules.nf'

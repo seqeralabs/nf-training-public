@@ -56,24 +56,24 @@ All parameters have a default configuration that is defined using the `nextflow.
 
 There are also several `includeConfig` statements in the `nextflow.config` file that are used to include additional `.config` files from the `conf/` folder. Each additional `.config` file contains categorized configuration information for your pipeline execution, some of which can be optionally included:
 
-- `base.config`
-    - Included by the pipeline by default.
-    - Generous resource allocations using labels.
-    - Does not specify any method for software management and expects software to be available (or specified elsewhere).
-- `igenomes.config`
-    - Included by the pipeline by default.
-    - Default configuration to access reference files stored on [AWS iGenomes](https://ewels.github.io/AWS-iGenomes/).
-- `igenomes_ignored.config`
-    - Empty genomes dictionary to use when igenomes is ignored.
-- `modules.config`
-    - Included by the pipeline by default.
-    - Module-specific configuration options (both mandatory and optional).
-- `test.config`
-    - Only included if specified as a profile.
-    - A configuration profile to test the pipeline with a small test dataset.
-- `test_full.config`
-    - Only included if specified as a profile.
-    - A configuration profile to test the pipeline with a full-size test dataset.
+-   `base.config`
+    -   Included by the pipeline by default.
+    -   Generous resource allocations using labels.
+    -   Does not specify any method for software management and expects software to be available (or specified elsewhere).
+-   `igenomes.config`
+    -   Included by the pipeline by default.
+    -   Default configuration to access reference files stored on [AWS iGenomes](https://ewels.github.io/AWS-iGenomes/).
+-   `igenomes_ignored.config`
+    -   Empty genomes dictionary to use when igenomes is ignored.
+-   `modules.config`
+    -   Included by the pipeline by default.
+    -   Module-specific configuration options (both mandatory and optional).
+-   `test.config`
+    -   Only included if specified as a profile.
+    -   A configuration profile to test the pipeline with a small test dataset.
+-   `test_full.config`
+    -   Only included if specified as a profile.
+    -   A configuration profile to test the pipeline with a full-size test dataset.
 
 !!! note
 
@@ -81,10 +81,10 @@ There are also several `includeConfig` statements in the `nextflow.config` file 
 
 Profiles used by nf-core pipelines can be broadly categorized into two groups:
 
-- **Software management profiles**
-    - Profiles for the management of software using software management tools, for example, `docker`, `singularity`, and `conda`.
-- **Test profiles**
-    - Profiles to execute the pipeline with a standardized set of test data and parameters, for example, `test` and `test_full`.
+-   **Software management profiles**
+    -   Profiles for the management of software using software management tools, for example, `docker`, `singularity`, and `conda`.
+-   **Test profiles**
+    -   Profiles to execute the pipeline with a standardized set of test data and parameters, for example, `test` and `test_full`.
 
 nf-core pipelines are required to define software containers and environments that can be activated using profiles. Although it is possible to run the pipelines with software installed by other methods (e.g., environment modules or manual installation), using Docker or Singularity is more sharable, convenient, and reproducible.
 
@@ -100,11 +100,11 @@ For shared resources such as an HPC cluster, you may consider developing a share
 
 Nextflow will also look for files that are external to the pipeline project directory. These files include:
 
-- The config file `$HOME/.nextflow/config`
-- A config file named `nextflow.config` in your current directory
-- Custom files specified using the command line
-    - A parameter file that is provided using the `-params-file` option
-    - A config file that are provided using the `-c` option
+-   The config file `$HOME/.nextflow/config`
+-   A config file named `nextflow.config` in your current directory
+-   Custom files specified using the command line
+    -   A parameter file that is provided using the `-params-file` option
+    -   A config file that are provided using the `-c` option
 
 **You do not need to use all of these files to run your pipeline.**
 

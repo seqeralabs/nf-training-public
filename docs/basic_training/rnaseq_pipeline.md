@@ -115,9 +115,9 @@ Nextflow allows the execution of any command or script by using a `process` defi
 
 A `process` is defined by providing three main declarations:
 
-- [`input`](https://www.nextflow.io/docs/latest/process.html#inputs)
-- [`output`](https://www.nextflow.io/docs/latest/process.html#outputs)
-- [`script`](https://www.nextflow.io/docs/latest/process.html#script)
+-   [`input`](https://www.nextflow.io/docs/latest/process.html#inputs)
+-   [`output`](https://www.nextflow.io/docs/latest/process.html#outputs)
+-   [`script`](https://www.nextflow.io/docs/latest/process.html#script)
 
 To add a transcriptome `INDEX` processing step to your pipeline, you will need to add the following code block to your `script1.nf`. Alternatively, this code block has already been added to `script2.nf`.
 

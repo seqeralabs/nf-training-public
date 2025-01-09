@@ -50,15 +50,15 @@ Se isso não for o suficiente, use `cd` para entrar no diretório de trabalho da
 
 O diretório de execução da tarefa possui os seguintes arquivos:
 
-- `.command.sh`: O script do comando.
-- `.command.run`: Um wrapper do comando usado para executar a tarefa.
-- `.command.out`: A saída padrão completa da tarefa.
-- `.command.err`: O erro padrão completo da tarefa.
-- `.command.log`: A saída do wrapper de execução.
-- `.command.begin`: Um arquivo sentinela criado no momento que a tarefa é iniciada.
-- `.exitcode`: Um arquivo contendo o código de saída da tarefa.
-- Os arquivos de entrada da tarefa (links simbólicas)
-- Os arquivos de saída da tarefa
+-   `.command.sh`: O script do comando.
+-   `.command.run`: Um wrapper do comando usado para executar a tarefa.
+-   `.command.out`: A saída padrão completa da tarefa.
+-   `.command.err`: O erro padrão completo da tarefa.
+-   `.command.log`: A saída do wrapper de execução.
+-   `.command.begin`: Um arquivo sentinela criado no momento que a tarefa é iniciada.
+-   `.exitcode`: Um arquivo contendo o código de saída da tarefa.
+-   Os arquivos de entrada da tarefa (links simbólicas)
+-   Os arquivos de saída da tarefa
 
 Certifique-se que o arquivo `.command.sh` contém o comando esperado e que todas as variáveis
 foram substituídas pelos valores desejados.

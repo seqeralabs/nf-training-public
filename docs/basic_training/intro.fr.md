@@ -12,9 +12,9 @@ Il est conçu autour de l'idée que la plateforme Linux est la _lingua franca_ d
 
 Nextflow étend cette approche en ajoutant la possibilité de définir des interactions complexes entre les programmes et un environnement de calcul parallèle de haut niveau, basé sur le modèle de programmation par flux de données. Les principales caractéristiques de Nextflow sont les suivantes:
 
-- Portabilité et reproductibilité du workflow
-- la scalabilité de la parallélisation et du déploiement
-- Intégration des outils, systèmes et normes industrielles existants
+-   Portabilité et reproductibilité du workflow
+-   la scalabilité de la parallélisation et du déploiement
+-   Intégration des outils, systèmes et normes industrielles existants
 
 ### Processus et canaux
 

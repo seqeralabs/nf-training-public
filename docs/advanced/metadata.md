@@ -2,8 +2,8 @@
 
 A central challenge in a lot of batch-style computation is how to ensure the metadata describing a file remains with the file. Two good rules for handling metadata in Nextflow are:
 
-- Metadata should be explicit - be extremely wary of metadata encoded in filenames
-- Metadata should travel through channels with the data in a tuple element.
+-   Metadata should be explicit - be extremely wary of metadata encoded in filenames
+-   Metadata should travel through channels with the data in a tuple element.
 
 ## Metadata Import
 

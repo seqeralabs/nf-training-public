@@ -49,15 +49,15 @@ If this is not enough, `cd` into the task work directory. It contains all the fi
 
 The task execution directory contains these files:
 
-- `.command.sh`: The command script.
-- `.command.run`: The command wrapped used to run the task.
-- `.command.out`: The complete task standard output.
-- `.command.err`: The complete task standard error.
-- `.command.log`: The wrapper execution output.
-- `.command.begin`: Sentinel file created as soon as the task is launched.
-- `.exitcode`: A file containing the task exit code.
-- Task input files (symlinks)
-- Task output files
+-   `.command.sh`: The command script.
+-   `.command.run`: The command wrapped used to run the task.
+-   `.command.out`: The complete task standard output.
+-   `.command.err`: The complete task standard error.
+-   `.command.log`: The wrapper execution output.
+-   `.command.begin`: Sentinel file created as soon as the task is launched.
+-   `.exitcode`: A file containing the task exit code.
+-   Task input files (symlinks)
+-   Task output files
 
 Verify that the `.command.sh` file contains the expected command and all variables are correctly resolved.
 

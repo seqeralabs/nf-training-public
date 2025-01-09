@@ -90,9 +90,9 @@ nextflow run <script> -w /algum/diretorio/de/scratch
 
 O código hash para os arquivos de entrada são computados usando:
 
-- O caminho completo do arquivo
-- O tamanho do arquivo
-- A última marcação de tempo de modificação
+-   O caminho completo do arquivo
+-   O tamanho do arquivo
+-   A última marcação de tempo de modificação
 
 Portanto, o simples uso do **touch** em um arquivo irá invalidar a execução da tarefa relacionada.
 

@@ -19,10 +19,10 @@ Components defined in the module script can be imported into other Nextflow scri
 
 Using the `hello.nf` example, you can achieve this by:
 
-- Creating a file called `modules.nf` in the top-level directory.
-- Copying and pasting the two process definitions for `SPLITLETTERS` and `CONVERTTOUPPER` into `modules.nf`.
-- Removing the `process` definitions in the `hello.nf` script.
-- Importing the processes from `modules.nf` within the `hello.nf` script anywhere above the `workflow` definition:
+-   Creating a file called `modules.nf` in the top-level directory.
+-   Copying and pasting the two process definitions for `SPLITLETTERS` and `CONVERTTOUPPER` into `modules.nf`.
+-   Removing the `process` definitions in the `hello.nf` script.
+-   Importing the processes from `modules.nf` within the `hello.nf` script anywhere above the `workflow` definition:
 
 ```groovy linenums="1" title="hello.nf"
 include { SPLITLETTERS   } from './modules.nf'

@@ -10,11 +10,11 @@ Let's get started!
 
 By the end of this course you should:
 
-- Write simple Nextflow workflows
-- Describe the Nextflow concepts of Channels, Processes and Operators
-- Have an understanding of containerized workflows
-- Understand the different execution platforms supported by Nextflow
-- Describe the Nextflow community and ecosystem
+-   Write simple Nextflow workflows
+-   Describe the Nextflow concepts of Channels, Processes and Operators
+-   Have an understanding of containerized workflows
+-   Understand the different execution platforms supported by Nextflow
+-   Describe the Nextflow community and ecosystem
 
 ## Audience & prerequisites
 
@@ -22,9 +22,9 @@ Please note that this is **not** a beginner's workshop and familiarity with Next
 
 **Prerequisites**
 
-- A GitHub account
-- Experience with command line
-- An understanding of common file formats
+-   A GitHub account
+-   Experience with command line
+-   An understanding of common file formats
 
 ## Follow the training videos
 
@@ -42,8 +42,8 @@ You can watch the recording of the most recent training ([March, 2024](https://n
 
 If English is not your preferred language, you may find it useful to follow the training from the [March 2023 event](https://nf-co.re/events/2023/training-march-2023), which is available in multiple languages.
 
-- :flag_gb: [English recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhoWxHR0CS-7xzu5eRT8uHo)
-- :flag_in: [Hindi recording](https://youtube.com/playlist?list=PL3xpfTVZLcNikun1FrSvtXW8ic32TciTJ)
-- :flag_es: [Spanish recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhSlCWVoa3GURacuLWeFc8O)
-- :flag_pt: [Portuguese recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhi41yDYhyHitUhIcUHIbJg)
-- :flag_fr: [French recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhiv9SjhoA1EDOXj9nzIqdS)
+-   :flag_gb: [English recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhoWxHR0CS-7xzu5eRT8uHo)
+-   :flag_in: [Hindi recording](https://youtube.com/playlist?list=PL3xpfTVZLcNikun1FrSvtXW8ic32TciTJ)
+-   :flag_es: [Spanish recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhSlCWVoa3GURacuLWeFc8O)
+-   :flag_pt: [Portuguese recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhi41yDYhyHitUhIcUHIbJg)
+-   :flag_fr: [French recording](https://youtube.com/playlist?list=PL3xpfTVZLcNhiv9SjhoA1EDOXj9nzIqdS)

@@ -12,9 +12,9 @@ Ele foi projetado com base na ideia de que a plataforma Linux é a _língua fran
 
 O Nextflow estende essa abordagem, adicionando a capacidade de definir interações complexas entre programas e um ambiente de computação paralela de alto nível, baseado no modelo de programação Dataflow. Os principais recursos do Nextflow são:
 
-- Portabilidade e reprodutibilidade de fluxos de trabalho
-- Escalabilidade na paralelização e na implantação
-- Integração de ferramentas já existentes, sistemas e padrões da indústria
+-   Portabilidade e reprodutibilidade de fluxos de trabalho
+-   Escalabilidade na paralelização e na implantação
+-   Integração de ferramentas já existentes, sistemas e padrões da indústria
 
 ### Processos e Canais
 

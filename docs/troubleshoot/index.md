@@ -14,9 +14,9 @@ In this workshop, you will utilize the `hello-gatk.nf` script created for the [H
 
 By the end of this workshop you will be able to:
 
-- Describe Nextflow error outputs
-- List common causes of pipeline errors
-- Troubleshoot basic pipeline errors
+-   Describe Nextflow error outputs
+-   List common causes of pipeline errors
+-   Troubleshoot basic pipeline errors
 
 ## Audience & prerequisites
 
@@ -24,6 +24,6 @@ Please note that this is **not** a beginner's workshop and familiarity with Next
 
 **Prerequisites**
 
-- A GitHub account
-- Experience with command line
-- Experience writing pipelines with Nextflow
+-   A GitHub account
+-   Experience with command line
+-   Experience writing pipelines with Nextflow

@@ -273,10 +273,10 @@ singularity.enabled = true
 
 Os seguintes protocolos são suportados:
 
-- `library://` baixe a imagem do contêiner do [Singularity Library service](https://cloud.sylabs.io/library).
-- `shub://` baixe a imagem do contêiner do [Singularity Hub](https://singularity-hub.org/).
-- `docker://` baixe a imagem do contêiner do [Docker Hub](https://hub.docker.com/) e a converta para o formato Singularity.
-- `docker-daemon://` extraia a imagem do contêiner de uma instalação local do Docker e a converta em um arquivo de imagem Singularity.
+-   `library://` baixe a imagem do contêiner do [Singularity Library service](https://cloud.sylabs.io/library).
+-   `shub://` baixe a imagem do contêiner do [Singularity Hub](https://singularity-hub.org/).
+-   `docker://` baixe a imagem do contêiner do [Docker Hub](https://hub.docker.com/) e a converta para o formato Singularity.
+-   `docker-daemon://` extraia a imagem do contêiner de uma instalação local do Docker e a converta em um arquivo de imagem Singularity.
 
 !!! tip
 

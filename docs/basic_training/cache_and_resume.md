@@ -90,9 +90,9 @@ nextflow run <script> -w /some/scratch/dir
 
 The hash code for input files is computed using:
 
-- The complete file path
-- The file size
-- The last modified timestamp
+-   The complete file path
+-   The file size
+-   The last modified timestamp
 
 Therefore, just **touching** a file will invalidate the related task execution.
 

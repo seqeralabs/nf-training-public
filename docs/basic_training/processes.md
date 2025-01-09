@@ -758,9 +758,9 @@ Prints the following:
 
 Some caveats on glob pattern behavior:
 
-- Input files are not included in the list of possible matches
-- Glob pattern matches both files and directory paths
-- When a two stars pattern `**` is used to recourse across directories, only file paths are matched i.e., directories are not included in the result list.
+-   Input files are not included in the list of possible matches
+-   Glob pattern matches both files and directory paths
+-   When a two stars pattern `**` is used to recourse across directories, only file paths are matched i.e., directories are not included in the result list.
 
 !!! question "Exercise"
 

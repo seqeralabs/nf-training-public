@@ -22,11 +22,11 @@ Neste workshop, você aprenderá conceitos fundamentais para a construção de p
 
 Ao final deste workshop você será capaz de:
 
-- Descrever e utilizar os principais componentes do Nextflow o suficiente para criar um fluxo de trabalho simples de várias etapas
-- Descrever conceitos como operadores e fábricas de canal
-- Lançar um fluxo de trabalho localmente com Nextflow
-- Encontrar e interpretar saídas (resultados) e arquivos de log gerados pelo Nextflow
-- Solucionar problemas básicos
+-   Descrever e utilizar os principais componentes do Nextflow o suficiente para criar um fluxo de trabalho simples de várias etapas
+-   Descrever conceitos como operadores e fábricas de canal
+-   Lançar um fluxo de trabalho localmente com Nextflow
+-   Encontrar e interpretar saídas (resultados) e arquivos de log gerados pelo Nextflow
+-   Solucionar problemas básicos
 
 ## Público e pré-requisitos
 
@@ -34,5 +34,5 @@ Este é um workshop para aqueles que são completamente novos no Nextflow. Algum
 
 **Pré-requisitos**
 
-- Uma conta GitHub
-- Experiência com linha de comando
+-   Uma conta GitHub
+-   Experiência com linha de comando

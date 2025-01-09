@@ -18,18 +18,18 @@ O Nextflow pode ser usado em qualquer sistema compatível com POSIX (Linux, macO
 
 #### Requisitos
 
-- Bash
-- [Java 11 (ou uma versão posterior, até a 18)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- Git
-- [Docker](https://docs.docker.com/get-docker/)
+-   Bash
+-   [Java 11 (ou uma versão posterior, até a 18)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+-   Git
+-   [Docker](https://docs.docker.com/get-docker/)
 
 #### Requisitos opcionais para este tutorial
 
-- [Singularity](https://github.com/sylabs/singularity) 2.5.x (ou uma versão posterior)
-- [Conda](https://conda.io/) 4.5 (ou uma versão posterior)
-- [Graphviz](http://www.graphviz.org/)
-- [AWS CLI](https://aws.amazon.com/cli/)
-- Um ambiente de computação do AWS Batch configurado
+-   [Singularity](https://github.com/sylabs/singularity) 2.5.x (ou uma versão posterior)
+-   [Conda](https://conda.io/) 4.5 (ou uma versão posterior)
+-   [Graphviz](http://www.graphviz.org/)
+-   [AWS CLI](https://aws.amazon.com/cli/)
+-   Um ambiente de computação do AWS Batch configurado
 
 ### Baixe o Nextflow
 
@@ -85,17 +85,17 @@ Um ambiente de desenvolvimento Nextflow pré-configurado está disponível no Gi
 
 #### Requisitos
 
-- Uma conta no GitHub
-- Navegador Web (Google Chrome, Firefox)
-- Conexão com a Internet
+-   Uma conta no GitHub
+-   Navegador Web (Google Chrome, Firefox)
+-   Conexão com a Internet
 
 ### Gitpod quick start
 
 Para executar o Gitpod:
 
-- Clique na URL a seguir: <https://gitpod.io/#https://github.com/nextflow-io/training>
-    - Essa URL é o link do repositório do treinamento no GitHub, prefixado com `https://gitpod.io/#`
-- Faça login na sua conta do GitHub (e permita a autorização).
+-   Clique na URL a seguir: <https://gitpod.io/#https://github.com/nextflow-io/training>
+    -   Essa URL é o link do repositório do treinamento no GitHub, prefixado com `https://gitpod.io/#`
+-   Faça login na sua conta do GitHub (e permita a autorização).
 
 Depois de fazer login, o Gitpod deve carregar (pule a pré-compilação, se solicitado).
 
@@ -105,9 +105,9 @@ Agora você deve ver algo semelhante a imagem a seguir:
 
 ![Gitpod welcome](img/gitpod.welcome.png)
 
-- **A barra lateral** permite que você personalize seu ambiente Gitpod e execute tarefas básicas (copiar, colar, abrir arquivos, pesquisar, git, etc.). Clique no botão Explorer para ver quais arquivos estão neste repositório.
-- **O terminal** permite que você execute todos os programas mencionados no repositório. Por exemplo, tanto `nextflow` quanto `docker` estão instalados e podem ser executados.
-- **A janela principal** permite visualizar e editar arquivos. Clique em um arquivo no explorer para abri-lo na janela principal. Você também deve ver o material de treinamento em uma das janelas (<https://training.nextflow.io/>).
+-   **A barra lateral** permite que você personalize seu ambiente Gitpod e execute tarefas básicas (copiar, colar, abrir arquivos, pesquisar, git, etc.). Clique no botão Explorer para ver quais arquivos estão neste repositório.
+-   **O terminal** permite que você execute todos os programas mencionados no repositório. Por exemplo, tanto `nextflow` quanto `docker` estão instalados e podem ser executados.
+-   **A janela principal** permite visualizar e editar arquivos. Clique em um arquivo no explorer para abri-lo na janela principal. Você também deve ver o material de treinamento em uma das janelas (<https://training.nextflow.io/>).
 
 Para testar se o ambiente está funcionando corretamente, digite o seguinte comando no terminal:
 
@@ -127,9 +127,9 @@ Encoding: UTF-8 (UTF-8)
 
 ### Recursos do Gitpod
 
-- O Gitpod oferece 500 créditos gratuitos por mês, o que equivale a 50 horas de tempo de execução no ambiente de trabalho padrão (até 4 núcleos, 8 GB de RAM e 30 GB de armazenamento).
-- Há também uma opção de ambiente de trabalho que oferece até 8 núcleos, 16 GB de RAM e 50 GB de armazenamento. No entanto, o ambiente de trabalho grande usará seus créditos gratuitos mais rapidamente e você terá menos horas de acesso a esse ambiente.
-- Sua sessão no Gitpod expirará após 30 minutos de inatividade e suas alterações serão salvas por até 2 semanas (consulte a próxima seção para reabrir uma sessão expirada).
+-   O Gitpod oferece 500 créditos gratuitos por mês, o que equivale a 50 horas de tempo de execução no ambiente de trabalho padrão (até 4 núcleos, 8 GB de RAM e 30 GB de armazenamento).
+-   Há também uma opção de ambiente de trabalho que oferece até 8 núcleos, 16 GB de RAM e 50 GB de armazenamento. No entanto, o ambiente de trabalho grande usará seus créditos gratuitos mais rapidamente e você terá menos horas de acesso a esse ambiente.
+-   Sua sessão no Gitpod expirará após 30 minutos de inatividade e suas alterações serão salvas por até 2 semanas (consulte a próxima seção para reabrir uma sessão expirada).
 
 Acesse [gitpod.io](https://www.gitpod.io) para mais detalhes.
 

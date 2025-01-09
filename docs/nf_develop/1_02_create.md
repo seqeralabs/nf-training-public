@@ -156,8 +156,8 @@ The nf-core pipeline template has a `main.nf` script that calls `myfirstpipeline
 
 Instead of having one large monolithic pipeline script, it's broken up into smaller script components, namely, modules and subworkflows:
 
-- **Modules:** Wrappers around a single process
-- **Subworkflows:** Two or more modules that are packaged together as a mini workflow
+-   **Modules:** Wrappers around a single process
+-   **Subworkflows:** Two or more modules that are packaged together as a mini workflow
 
 <figure class="excalidraw">
 --8<-- "docs/nf_develop/img/nested.excalidraw.svg"
@@ -215,12 +215,12 @@ In the template, the `nextflow.config` file is a central configuration file and 
 
 There are several configuration files that are stored in the `conf` folder and are added to the configuration by default or optionally as profiles:
 
-- `base.config`: A 'blank slate' config file, appropriate for general use on most high performance compute environments.
-- `igenomes.config`: Defines reference genomes using iGenome paths.
-- `igenomes_ignored.config`: Empty genomes dictionary to use when igenomes is ignored
-- `modules.config`: Additional module directives and arguments.
-- `test.config`: A profile to run the pipeline with minimal test data.
-- `test_full.config`: A profile to run the pipeline with a full-sized test dataset.
+-   `base.config`: A 'blank slate' config file, appropriate for general use on most high performance compute environments.
+-   `igenomes.config`: Defines reference genomes using iGenome paths.
+-   `igenomes_ignored.config`: Empty genomes dictionary to use when igenomes is ignored
+-   `modules.config`: Additional module directives and arguments.
+-   `test.config`: A profile to run the pipeline with minimal test data.
+-   `test_full.config`: A profile to run the pipeline with a full-sized test dataset.
 
 ### `.nf-core.yml`
 
@@ -282,14 +282,14 @@ Automated workflows are an important part of the nf-core pipeline template.
 
 By default, the template comes with several automated tests that utilize GitHub Actions, each of which are configured in the `.github/workflows` folder:
 
-- `branch.yml`: Sets the branch protection for the nf-core repository
-- `ci.yml`: Run small pipeline tests with the small test datasets
-- `clean-up.yml`: Automated testing for stale and closed GitHub issues and PRs in the nf-core repo
-- `download_pipeline.yml`: Test a pipeline download with `nf-core pipelines download`.
-- `fix-linting.yml`: Fix linting by adding a comment to a PR
-- `linting_comment.yml`: Triggered after the linting action and posts an automated comment to the PR, even if the PR is coming from a fork
-- `linting.yml`: Triggered on pushes and PRs to the repository and runs `nf-core pipelines lint` and markdown lint tests to ensure that the code meets the nf-core guidelines
-- `release-announcements.yml`: Automatic release toot and tweet announcements for nf-core pipeline releases
+-   `branch.yml`: Sets the branch protection for the nf-core repository
+-   `ci.yml`: Run small pipeline tests with the small test datasets
+-   `clean-up.yml`: Automated testing for stale and closed GitHub issues and PRs in the nf-core repo
+-   `download_pipeline.yml`: Test a pipeline download with `nf-core pipelines download`.
+-   `fix-linting.yml`: Fix linting by adding a comment to a PR
+-   `linting_comment.yml`: Triggered after the linting action and posts an automated comment to the PR, even if the PR is coming from a fork
+-   `linting.yml`: Triggered on pushes and PRs to the repository and runs `nf-core pipelines lint` and markdown lint tests to ensure that the code meets the nf-core guidelines
+-   `release-announcements.yml`: Automatic release toot and tweet announcements for nf-core pipeline releases
 
 Many of these tests are only configured for the nf-core repo. However, they can be modified for your repository or ignored if they are superfluous to your requirements.
 

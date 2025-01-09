@@ -570,7 +570,7 @@ Les tags permettent un contrôle précis des modifications apportées à vos fic
 
 ## Plus de ressources
 
-- [Documentation Nextflow](http://docs.nextflow.io) - L'accueil de la documentation Nextflow.
-- [Modèles Nextflow](https://github.com/nextflow-io/patterns) - Une collection de modèles de mise en œuvre de Nextflow.
-- [CalliNGS-NF](https://github.com/CRG-CNAG/CalliNGS-NF) - Un workflow d'appel de variants mettant en œuvre les meilleures pratiques de GATK.
-- [nf-core](http://nf-co.re/) - Une collection communautaire de workflows génomiques prêts à la production.
+-   [Documentation Nextflow](http://docs.nextflow.io) - L'accueil de la documentation Nextflow.
+-   [Modèles Nextflow](https://github.com/nextflow-io/patterns) - Une collection de modèles de mise en œuvre de Nextflow.
+-   [CalliNGS-NF](https://github.com/CRG-CNAG/CalliNGS-NF) - Un workflow d'appel de variants mettant en œuvre les meilleures pratiques de GATK.
+-   [nf-core](http://nf-co.re/) - Une collection communautaire de workflows génomiques prêts à la production.

@@ -38,10 +38,10 @@ After Gitpod has loaded, you should see something similar to the following:
 
 ![Gitpod welcome](img/gitpod.welcome.png)
 
-- **The sidebar** allows you to customize your Gitpod environment and perform basic tasks (copy, paste, open files, search, git, etc.). You can click the explorer button to see which files are in this repository.
-- **The terminal** allows you to run all the programs in the repository. For example, both `nextflow` and `docker` are installed and can be executed.
-- **The file explorer** allows you to view and edit files. Clicking on a file in the explorer will open it within the main window.
-- **The Simple Browser** lets you view the nf-training material browser (<https://training.nextflow.io/>). If you close it by accident, you can load the simple browser again by typing the following in the terminal: `gp preview https://training.nextflow.io`.
+-   **The sidebar** allows you to customize your Gitpod environment and perform basic tasks (copy, paste, open files, search, git, etc.). You can click the explorer button to see which files are in this repository.
+-   **The terminal** allows you to run all the programs in the repository. For example, both `nextflow` and `docker` are installed and can be executed.
+-   **The file explorer** allows you to view and edit files. Clicking on a file in the explorer will open it within the main window.
+-   **The Simple Browser** lets you view the nf-training material browser (<https://training.nextflow.io/>). If you close it by accident, you can load the simple browser again by typing the following in the terminal: `gp preview https://training.nextflow.io`.
 
 ### Gitpod resources
 

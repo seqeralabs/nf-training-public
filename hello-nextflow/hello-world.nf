@@ -1,16 +1,16 @@
 #!/usr/bin/env nextflow
 
 /*
- * Use echo to print 'Hello World!' to standard out
+ * Use echo to print 'Hello World!' to a file
  */
 process sayHello {
 
     output:
-        stdout
+        path 'output.txt'
 
     script:
     """
-    echo 'Hello World!'
+    echo 'Hello World!' > output.txt
     """
 }
 

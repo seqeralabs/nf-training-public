@@ -11,10 +11,10 @@ A Seqera Platform, conhecida anteriormente como Nextflow Tower, é o posto de co
 
 Os principais recursos da Seqera Platform incluem:
 
-- O lançamento de pipelines pré-configurados com facilidade.
-- Integração programática para atender às necessidades de uma organização.
-- Disponibilização pipelines em áreas de trabalho compartilhadas.
-- Gerenciamento da infraestrutura necessária para executar análise de dados em escala.
+-   O lançamento de pipelines pré-configurados com facilidade.
+-   Integração programática para atender às necessidades de uma organização.
+-   Disponibilização pipelines em áreas de trabalho compartilhadas.
+-   Gerenciamento da infraestrutura necessária para executar análise de dados em escala.
 
 !!! tip
 

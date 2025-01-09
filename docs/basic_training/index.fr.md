@@ -29,11 +29,11 @@ Nous organisons un événement de formation en ligne gratuit pour ce cours envir
 Si l'anglais n'est pas votre langue préférée, vous trouverez peut-être utile de suivre la formation de [l'événement de mars 2023](https://nf-co.re/events/2023/training-march-2023), que nous avons organisé plusieurs langues.
 Veuillez noter que certaines parties du matériel de formation peuvent avoir été mises à jour depuis leur enregistrement.
 
-- :flag_gb: [En Anglais](https://youtube.com/playlist?list=PL3xpfTVZLcNhoWxHR0CS-7xzu5eRT8uHo)
-- :flag_in: [En Hindi](https://youtube.com/playlist?list=PL3xpfTVZLcNikun1FrSvtXW8ic32TciTJ)
-- :flag_es: [En Espagnol](https://youtube.com/playlist?list=PL3xpfTVZLcNhSlCWVoa3GURacuLWeFc8O)
-- :flag_pt: [En Portugais](https://youtube.com/playlist?list=PL3xpfTVZLcNhi41yDYhyHitUhIcUHIbJg)
-- :flag_fr: [En Français](https://youtube.com/playlist?list=PL3xpfTVZLcNhiv9SjhoA1EDOXj9nzIqdS)
+-   :flag_gb: [En Anglais](https://youtube.com/playlist?list=PL3xpfTVZLcNhoWxHR0CS-7xzu5eRT8uHo)
+-   :flag_in: [En Hindi](https://youtube.com/playlist?list=PL3xpfTVZLcNikun1FrSvtXW8ic32TciTJ)
+-   :flag_es: [En Espagnol](https://youtube.com/playlist?list=PL3xpfTVZLcNhSlCWVoa3GURacuLWeFc8O)
+-   :flag_pt: [En Portugais](https://youtube.com/playlist?list=PL3xpfTVZLcNhi41yDYhyHitUhIcUHIbJg)
+-   :flag_fr: [En Français](https://youtube.com/playlist?list=PL3xpfTVZLcNhiv9SjhoA1EDOXj9nzIqdS)
 
 ## Aperçu
 

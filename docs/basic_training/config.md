@@ -347,10 +347,10 @@ singularity.enabled = true
 
 The following protocols are supported:
 
-- `library://` download the container image from the [Singularity Library service](https://cloud.sylabs.io/library).
-- `shub://` download the container image from the [Singularity Hub](https://singularity-hub.org/).
-- `docker://` download the container image from the [Docker Hub](https://hub.docker.com/) and convert it to the Singularity format.
-- `docker-daemon://` pull the container image from a local Docker installation and convert it to a Singularity image file.
+-   `library://` download the container image from the [Singularity Library service](https://cloud.sylabs.io/library).
+-   `shub://` download the container image from the [Singularity Hub](https://singularity-hub.org/).
+-   `docker://` download the container image from the [Docker Hub](https://hub.docker.com/) and convert it to the Singularity format.
+-   `docker-daemon://` pull the container image from a local Docker installation and convert it to a Singularity image file.
 
 !!! warning
 

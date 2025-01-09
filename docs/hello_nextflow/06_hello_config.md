@@ -1,5 +1,7 @@
 # Part 5: Hello Config
 
+[TODO] SIMPLIFY / STREAMLINE THIS
+
 This section will explore how to set up and manage the configuration of your Nextflow pipeline so that you'll be able to customize its behavior, adapt it to different environments, and optimize resource usage _without altering a single line of the workflow code itself_.
 
 We're going to cover essential components of Nextflow configuration such as config files, profiles, process directives, executors, and parameter files.
@@ -7,7 +9,7 @@ By learning to utilize these configuration options effectively, you can enhance 
 
 ---
 
-## 0. Warmup: Moving to a formal project structure
+## 0. Warmup: Moving to a formal project structure [TODO] GET RID OF THIS
 
 So far we've been working with a very loose structure, with just one workflow code file and a tiny configuration file that we've mostly ignored, because we were very focused on learning how to implement the workflow itself.
 However, we're now moving into the phase of this training series that is more focused on code development and maintenance practices.
@@ -33,10 +35,10 @@ hello-config
 └── nextflow.config
 ```
 
-- **`main.nf`** is a workflow based on `hello-operators.nf`, the workflow produced by completing Part 4 of this training course;
+-   **`main.nf`** is a workflow based on `hello-operators.nf`, the workflow produced by completing Part 4 of this training course;
 
-- **`nextflow.config`** is a copy of the original `nextflow.config` file from the `hello-nextflow` directory, one level up (where we've been working so far).
-  Whenever there is a file named `nextflow.config` in the current directory, Nextflow will automatically load configuration from it. The one we have been using contains the following lines:
+-   **`nextflow.config`** is a copy of the original `nextflow.config` file from the `hello-nextflow` directory, one level up (where we've been working so far).
+    Whenever there is a file named `nextflow.config` in the current directory, Nextflow will automatically load configuration from it. The one we have been using contains the following lines:
 
     ```console title="nextflow.config" linenums="1"
     docker.fixOwnership = true
@@ -54,8 +56,8 @@ hello-config
 
     Anything you put into the `nextflow.config` can be overridden at runtime by providing the relevant process directives or parameters and values on the command line, or by importing another configuration file, according to the order of precedence described [here](https://www.nextflow.io/docs/latest/config.html).
 
-- **`demo-params.json`** is a parameter file intended for supplying parameter values to a workflow.
-  We will use it in section 5 of this tutorial.
+-   **`demo-params.json`** is a parameter file intended for supplying parameter values to a workflow.
+    We will use it in section 5 of this tutorial.
 
 The one thing that's missing is a way to point to the original data without making a copy of it or updating the file paths wherever they're specified.
 The simplest solution is to link to the data location.
@@ -116,6 +118,8 @@ Learn how to modify basic configuration properties to adapt to your compute envi
 ---
 
 ## 1. Determine what software packaging technology to use
+
+[TODO] SIMPLIFY ALL THIS TO JUST USE THE COWSAY PACKAGE
 
 In the very first part of this training course (Part 1: Hello World) we just used locally installed software in our workflow. Then from Part 2 onward, we've been using Docker containers.
 
@@ -431,12 +435,12 @@ This runs each step on the same machine that Nextflow is running on.
 However, for large workloads, you will typically want to use a distributed executor such as an HPC or cloud.
 Nextflow supports several different distributed executors, including:
 
-- HPC (SLURM, PBS, SGE)
-- AWS Batch
-- Google Batch
-- Azure Batch
-- Kubernetes
-- GA4GH TES
+-   HPC (SLURM, PBS, SGE)
+-   AWS Batch
+-   Google Batch
+-   Azure Batch
+-   Kubernetes
+-   GA4GH TES
 
 The executor is subject to a process directive called `executor`. By default it is set to `local`, so the following configuration is implied:
 
@@ -467,6 +471,8 @@ And... that's it! As noted before, this does assume that Slurm itself is already
 Basically we are telling Nextflow to generate a Slurm submission script and submit it using an `sbatch` command.
 
 ### 3.2. Launch the workflow to generate the job submission script
+
+[TODO] THIS WAS CONFUSING — EXPLAIN BETTER OR CUT
 
 Let's try running this; even though we know it won't execute (since we don't have Slurm set up in this Gitpod environment) we'll be able to see what the submission script looks like.
 
@@ -714,6 +720,8 @@ Let's try that out.
 
 ### 4.3. Run the workflow to generate a resource utilization report
 
+[TODO] SUMMARIZE AND REFER TO DEEPER DIVE IN DOMAIN-SPECIFIC EXAMPLES (not useful with toy examples)
+
 To have Nextflow generate the report automatically, simply add `-with-report <filename>.html` to your command line.
 
 ```bash
@@ -849,7 +857,7 @@ Configuring the parameters destined for the tools and operations wrapped within 
 
 ---
 
-## 5. Configure workflow parameters
+## 5. Configure workflow parameters [TODO] STREAMLINE THIS (no point ping-ponging so much)
 
 So far we've been exploring options for configuring how Nextflow behaves in terms of executing the work.
 That's all well and good, but how do we manage the parameters that are meant for the workflow itself, and the tools it calls within the processes?
@@ -857,190 +865,44 @@ That is also something we should be able to do without editing code files every 
 
 As it turns out, there's a lot of overlap between this kind of configuration and the infrastructure configuration, starting with the `nextflow.config` file, which can also house default values for command line parameters.
 
-### 5.1. Move the default parameter declarations to the configuration file
+[TODO] NO JUST STICK IT STRAIGHT INTO A PARAMS JSON
 
-We originally stored all our default parameter values in the workflow script itself, but we can move them out into the `nextflow.config` file if we prefer.
+### 5.1. Using a parameter file
 
-So let's cut this set of params out of `main.nf`:
+[TODO] UPDATE CODE
 
-```groovy title="main.nf" linenums="3"
-/*
- * Pipeline parameters
- */
+Another convenient way to provide parameter values without having to modify the source code or putting a lot in the command line (which is error prone) is to use a parameter file.
 
-// Primary input (file of input files, one per line)
-params.reads_bam = "${projectDir}/data/sample_bams.txt"
-
-// Output directory
-params.outdir    = 'results_genomics'
-
-// Accessory files
-params.reference        = "${projectDir}/data/ref/ref.fasta"
-params.reference_index  = "${projectDir}/data/ref/ref.fasta.fai"
-params.reference_dict   = "${projectDir}/data/ref/ref.dict"
-params.intervals        = "${projectDir}/data/ref/intervals.bed"
-
-// Base name for final output file
-params.cohort_name = "family_trio"
-```
-
-And let's stick it into the `nextflow.config` file.
-
-!!!note
-
-    It doesn't really matter where we put it into the file, as long as we keep the params together and avoid mixing them in with the infrastructure configuration, for the sake of readability.
-    So putting it at the end will do just fine.
-
-### 5.2. Run the workflow with `-resume` to verify that it still works
-
-Let's check that we haven't broken anything, and let's include the `-resume` flag.
-
-```bash
-nextflow run main.nf -profile my_laptop -resume
-```
-
-Not only does everything work, but all of the process calls are recognized as having been run previously.
-
-```console title="Output"
- N E X T F L O W   ~  version 24.10.0
-
- ┃ Launching `main.nf` [modest_kay] DSL2 - revision: 328869237b
-
-[d6/353bb0] SAMTOOLS_INDEX (3)       [100%] 3 of 3, cached: 3 ✔
-[dc/2a9e3f] GATK_HAPLOTYPECALLER (2) [100%] 3 of 3, cached: 3 ✔
-[fe/a940b2] GATK_JOINTGENOTYPING     [100%] 1 of 1, cached: 1 ✔
-```
-
-Indeed, having moved the parameter values to a different file changes nothing to the command submission that Nextflow generates. The resumability of the pipeline is preserved.
-
-### 5.3. Streamline the syntax of the parameter defaults
-
-Now that our default parameter declarations are in `nextflow.config`, we can switch to using a more structured syntax using a `params` block. That allows us to remove the repeated `params.`.
-
-```groovy title="nextflow.config" linenums="35"
-/*
- * Pipeline parameters
- */
-
-params {
-    // Primary input (file of input files, one per line)
-    reads_bam        = "${projectDir}/data/sample_bams.txt"
-
-    // Output directory
-    outdir           = 'results_genomics'
-
-    // Accessory files
-    reference        = "${projectDir}/data/ref/ref.fasta"
-    reference_index  = "${projectDir}/data/ref/ref.fasta.fai"
-    reference_dict   = "${projectDir}/data/ref/ref.dict"
-    intervals        = "${projectDir}/data/ref/intervals.bed"
-
-    // Base name for final output file
-    cohort_name      = "family_trio"
-}
-```
-
-Feel free to re-run this with the same command as above to verify that it works and still preserves the resumability of the pipeline.
-
-At this point, you may be wondering how to provide actual data and reference files to run this workflow for real, since what we've put in here is just a tiny test set.
-
-There are several options.
-As we mentioned earlier (see note at the start of this page), you can override the defaults specified in the `nextflow.config` file by providing directives or parameter values on the command line, or by importing other configuration files.
-
-In this particular case, the best solution is to use a parameter file, which is a JSON file containing key-value pairs for all of the parameters you want to supply values for.
-
-### 5.4. Using a parameter file to override defaults
-
-We provide a parameter file in the current directory, called `demo-params.json`, which contains key-value pairs for all of the parameters our workflow expects.
-The values are the same input files and reference files we've been using so far.
+We provide an example parameter file in the current directory, called `demo-params.json`, which contains a key-value pair for the input our workflow expects.
 
 ```json title="demo-params.json" linenums="1"
 {
-    "reads_bam": "data/sample_bams.txt",
-    "outdir": "results_genomics",
-    "reference": "data/ref/ref.fasta",
-    "reference_index": "data/ref/ref.fasta.fai",
-    "reference_dict": "data/ref/ref.dict",
-    "intervals": "data/ref/intervals.bed",
-    "cohort_name": "family_trio"
+    "greeting": "Dobrý den"
 }
 ```
 
 To run the workflow with this parameter file, simply add `-params-file demo-params.json` to the base command.
 
 ```bash
-nextflow run main.nf -profile my_laptop -params-file demo-params.json
+nextflow run hello-world.nf -params-file demo-params.json
 ```
 
 It works! And as expected, this produces the same outputs as previously.
 
 ```console title="Output"
- N E X T F L O W   ~  version 24.10.0
-
- ┃ Launching `main.nf` [marvelous_mandelbrot] DSL2 - revision: 328869237b
-
-executor >  local (7)
-[63/23a827] SAMTOOLS_INDEX (1)       [100%] 3 of 3 ✔
-[aa/60aa4a] GATK_HAPLOTYPECALLER (2) [100%] 3 of 3 ✔
-[35/bda5eb] GATK_JOINTGENOTYPING     [100%] 1 of 1 ✔
+[TODO]
 ```
 
-However, you may be thinking, well, did we really override the configuration? How would we know, since those were the same files?
+[TODO] CONCLUDE
 
-### 5.5. Remove or generalize default values from `nextflow.config`
-
-Let's strip out all the file paths from the `params` block in `nextflow.config`, replacing them with `null`, and replace the `cohort_name` value with something more generic.
-
-_Before:_
-
-```groovy title="nextflow.config" linenums="39"
-params {
-    // Primary input (file of input files, one per line)
-    reads_bam        = "${projectDir}/data/sample_bams.txt"
-
-    // Output directory
-    outdir           = 'results_genomics'
-
-    // Accessory files
-    reference        = "${projectDir}/data/ref/ref.fasta"
-    reference_index  = "${projectDir}/data/ref/ref.fasta.fai"
-    reference_dict   = "${projectDir}/data/ref/ref.dict"
-    intervals        = "${projectDir}/data/ref/intervals.bed"
-
-    // Base name for final output file
-    cohort_name      = "family_trio"
-}
-```
-
-_After:_
-
-```groovy title="nextflow.config" linenums="39"
-params {
-    // Primary input (file of input files, one per line)
-    reads_bam        = null
-
-    // Output directory
-    outdir           = null
-
-    // Accessory files
-    reference        = null
-    reference_index  = null
-    reference_dict   = null
-    intervals        = null
-
-    // Base name for final output file
-    cohort_name      = "my_cohort"
-}
-```
-
-Now, if you run the same command again, it will still work.
-So yes, we're definitely able to pull those parameter values from the parameter file.
-
-This is great because, with the parameter file in hand, we'll now be able to provide parameter values at runtime without having to type massive command lines **and** without modifying the workflow nor the default configuration.
+This may seem like overkill when you only have a single parameter to specify, but some pipelines expect dozens of parameters.
+In those cases, using a parameter file will allow us to provide parameter values at runtime without having to type massive command lines and without modifying the workflow.
 
 That being said, it was nice to be able to demo the workflow without having to keep track of filenames and such. Let's see if we can use a profile to replicate that behavior.
 
-### 5.6. Create a demo profile
+### 5.2. Create a demo profile
+
+[TODO] DECIDE IF WE KEEP THIS; IF SO UPDATE TEXT ;; BUT MAYBE PUT THIS FIRST
 
 Yes we can! We just need to retrieve the default parameter declarations as they were written in the original workflow (with the `params.*` syntax) and copy them into a new profile that we'll call `demo`.
 

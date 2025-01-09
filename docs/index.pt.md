@@ -15,9 +15,9 @@ Temos vários treinamentos distintos disponíveis neste site. Role para baixo pa
 
 Os treinamentos listados abaixo foram construídos de modo que você possa fazê-los de forma independente; você pode trabalhar neles sozinho a qualquer momento (veja Configuração do Ambiente para detalhes práticos). No entanto, você pode usufruir ainda mais desses materiais ao participar de um evento de treinamento em grupo.
 
-- Eventos online gratuitos são realizados regularmente pela comunidade nf-core, veja a [página de eventos nf-core](https://nf-co.re/events) para mais informações.
-- A Seqera (a empresa que desenvolve o Nextflow) realiza uma variedade de eventos de treinamento. Veja a página [Seqera Events](https://seqera.io/events/) e procure por 'Seqera Sessions' e 'Nextflow Summit'.
-- Nosso time de Comunidade também ministra regularmente treinamentos hospedados por outras organizações; anúncios e inscrições para eles são normalmente gerenciados por essas organizações.
+-   Eventos online gratuitos são realizados regularmente pela comunidade nf-core, veja a [página de eventos nf-core](https://nf-co.re/events) para mais informações.
+-   A Seqera (a empresa que desenvolve o Nextflow) realiza uma variedade de eventos de treinamento. Veja a página [Seqera Events](https://seqera.io/events/) e procure por 'Seqera Sessions' e 'Nextflow Summit'.
+-   Nosso time de Comunidade também ministra regularmente treinamentos hospedados por outras organizações; anúncios e inscrições para eles são normalmente gerenciados por essas organizações.
 
 Quando decidir começar o treinamento, clique no botão 'Abrir no Gitpod', nesta página ou na página de índice do treinamento escolhido, para abrir um ambiente de treinamento dentro do seu próporio navegador (requer uma conta gratuita no GitHub).
 

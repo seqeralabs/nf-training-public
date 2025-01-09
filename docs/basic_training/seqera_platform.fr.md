@@ -11,10 +11,10 @@ Seqera Platform, anciennement connu sous le nom Nextflow Tower, est le poste de 
 
 Les principales caractéristiques de Seqera Platform sont les suivantes
 
-- Le lancement de pipelines préconfigurés en toute simplicité.
-- L'intégration programmatique pour répondre aux besoins d'une organisation.
-- La publication de pipelines dans des espaces de travail partagés.
-- La gestion de l'infrastructure nécessaire à l'exécution d'analyses de données à grande échelle.
+-   Le lancement de pipelines préconfigurés en toute simplicité.
+-   L'intégration programmatique pour répondre aux besoins d'une organisation.
+-   La publication de pipelines dans des espaces de travail partagés.
+-   La gestion de l'infrastructure nécessaire à l'exécution d'analyses de données à grande échelle.
 
 !!! conseil
 

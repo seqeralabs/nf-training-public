@@ -22,6 +22,6 @@ To check everything is working as expected you can run the `hello-gatk.nf` scrip
 
 If all of the data has been copied and unzipped correctly you should see the pipeline execute three processes:
 
-- `SAMTOOLS_INDEX`
-- `GATK_HAPLOTYPECALLER`
-- `GATK_JOINTGENOTYPING`
+-   `SAMTOOLS_INDEX`
+-   `GATK_HAPLOTYPECALLER`
+-   `GATK_JOINTGENOTYPING`

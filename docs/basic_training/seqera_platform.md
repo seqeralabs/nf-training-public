@@ -9,10 +9,10 @@ Seqera Platform, previously known as Nextflow Tower, is the centralized command 
 
 Seqera core features include:
 
-- The launching of pre-configured pipelines with ease.
-- Programmatic integration to meet the needs of an organization.
-- Publishing pipelines to shared workspaces.
-- Management of the infrastructure required to run data analysis at scale.
+-   The launching of pre-configured pipelines with ease.
+-   Programmatic integration to meet the needs of an organization.
+-   Publishing pipelines to shared workspaces.
+-   Management of the infrastructure required to run data analysis at scale.
 
 !!! tip
 

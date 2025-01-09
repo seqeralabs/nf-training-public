@@ -4,8 +4,8 @@ This is an aspect of Nextflow that can be confusing. There are multiple ways of 
 
 This gives us two complications:
 
-- At which location should I be loading a configuration value?
-- Given a particular parameter, how do I know where it was set?
+-   At which location should I be loading a configuration value?
+-   Given a particular parameter, how do I know where it was set?
 
 ## Precedence
 
@@ -152,15 +152,15 @@ The most common use for dynamic process directives is to enable tasks that fail 
 
 To enable this, two directives are needed:
 
-- `maxRetries`
-- `errorStrategy`
+-   `maxRetries`
+-   `errorStrategy`
 
 The `errorStrategy` directive determines what action Nextflow should take in the event of a task failure (a non-zero exit code). The available options are:
 
-- `terminate`: Nextflow terminates the execution as soon as an error condition is reported. Pending jobs are killed (default)
-- `finish`: Initiates an orderly pipeline shutdown when an error condition is raised, waiting the completion of any submitted job.
-- `ignore`: Ignores processes execution errors.
-- `retry`: Re-submit for execution a process returning an error condition.
+-   `terminate`: Nextflow terminates the execution as soon as an error condition is reported. Pending jobs are killed (default)
+-   `finish`: Initiates an orderly pipeline shutdown when an error condition is raised, waiting the completion of any submitted job.
+-   `ignore`: Ignores processes execution errors.
+-   `retry`: Re-submit for execution a process returning an error condition.
 
 If the `errorStrategy` is "retry", then it will retry up to the value of `maxRetries` times.
 

@@ -10,17 +10,17 @@ Variant calling is done **simultaneously** on bam files from **all replicates**.
 
 Documentation for all software used in the workflow can be found at the following links:
 
-- [samtools](http://www.htslib.org/doc/samtools.html)
-- [picard `CreateSequenceDictionary`](https://broadinstitute.github.io/picard/command-line-overview.html#CreateSequenceDictionary)
-- [STAR](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)
-- [vcftools](https://vcftools.github.io/man_latest.html)
-- [GATK tools](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/index)
-    - [`SplitNCigarReads`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_rnaseq_SplitNCigarReads.php)
-    - [`BaseRecalibrator`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_bqsr_BaseRecalibrator.php)
-    - [`PrintReads`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_readutils_PrintReads.php)
-    - [`HaplotypeCaller`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php)
-    - [`VariantFiltration`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_filters_VariantFiltration.php)
-    - [`ASEReadCounter`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_rnaseq_ASEReadCounter.php)
+-   [samtools](http://www.htslib.org/doc/samtools.html)
+-   [picard `CreateSequenceDictionary`](https://broadinstitute.github.io/picard/command-line-overview.html#CreateSequenceDictionary)
+-   [STAR](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)
+-   [vcftools](https://vcftools.github.io/man_latest.html)
+-   [GATK tools](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/index)
+    -   [`SplitNCigarReads`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_rnaseq_SplitNCigarReads.php)
+    -   [`BaseRecalibrator`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_bqsr_BaseRecalibrator.php)
+    -   [`PrintReads`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_readutils_PrintReads.php)
+    -   [`HaplotypeCaller`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php)
+    -   [`VariantFiltration`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_filters_VariantFiltration.php)
+    -   [`ASEReadCounter`](https://software.broadinstitute.org/gatk/gatkdocs/3.6-0/org_broadinstitute_gatk_tools_walkers_rnaseq_ASEReadCounter.php)
 
 ## Pipeline steps
 
@@ -178,9 +178,9 @@ java -jar /usr/gitc/GATK35.jar -T HaplotypeCaller \
 
 Variant filtering is done as recommended in the GATK best practices:
 
-- keep clusters of at least 3 SNPs that are within a window of 35 bases between them
-- estimate strand bias using Fisher’s Exact Test with values > 30.0 (Phred-scaled p-value)
-- use variant call confidence score `QualByDepth` (QD) with values < 2.0. The QD is the QUAL score normalized by allele depth (AD) for a variant.
+-   keep clusters of at least 3 SNPs that are within a window of 35 bases between them
+-   estimate strand bias using Fisher’s Exact Test with values > 30.0 (Phred-scaled p-value)
+-   use variant call confidence score `QualByDepth` (QD) with values < 2.0. The QD is the QUAL score normalized by allele depth (AD) for a variant.
 
 ```bash
 java -jar /usr/gitc/GATK35.jar -T VariantFiltration \

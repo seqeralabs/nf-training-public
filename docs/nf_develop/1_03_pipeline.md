@@ -2,8 +2,8 @@
 
 The nf-core pipeline template is a working pipeline and comes pre-configured with two modules:
 
-- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/): A tool that performs quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses that can be used to give a quick impression of your data.
-- [MultiQC](https://multiqc.info/): A modular tool to aggregate results from bioinformatics analyses across many samples into a single report.
+-   [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/): A tool that performs quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses that can be used to give a quick impression of your data.
+-   [MultiQC](https://multiqc.info/): A modular tool to aggregate results from bioinformatics analyses across many samples into a single report.
 
 !!! note "Pre-configured modules are optional"
 
@@ -181,8 +181,8 @@ Using this module information you can work out what inputs are required for the 
 
 1.  `tuple val(meta), path(reads)`
 
-    - A tuple with a meta _map_ and a list of FASTQ _files_
-    - The channel `ch_samplesheet` used by the `FASTQC` process can be used as the reads input.
+    -   A tuple with a meta _map_ and a list of FASTQ _files_
+    -   The channel `ch_samplesheet` used by the `FASTQC` process can be used as the reads input.
 
 As only one input channel required, and it already exists, it can be added to your `mypipeline.nf` file without any additional channel creation or modifications.
 

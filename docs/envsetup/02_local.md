@@ -10,18 +10,18 @@ Nextflow can be used on any POSIX-compatible system (Linux, macOS, Windows Subsy
 
 **Requirements**
 
-- Bash
-- [Java 11 (or later, up to 21)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- [Git](https://git-scm.com/)
-- [Docker](https://docs.docker.com/get-docker/)
+-   Bash
+-   [Java 11 (or later, up to 21)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+-   [Git](https://git-scm.com/)
+-   [Docker](https://docs.docker.com/get-docker/)
 
 **Optional requirements**
 
-- [Singularity](https://github.com/sylabs/singularity) 2.5.x (or later)
-- [Conda](https://conda.io/) 4.5 (or later)
-- [Graphviz](http://www.graphviz.org/)
-- [AWS CLI](https://aws.amazon.com/cli/)
-- A configured AWS Batch computing environment
+-   [Singularity](https://github.com/sylabs/singularity) 2.5.x (or later)
+-   [Conda](https://conda.io/) 4.5 (or later)
+-   [Graphviz](http://www.graphviz.org/)
+-   [AWS CLI](https://aws.amazon.com/cli/)
+-   A configured AWS Batch computing environment
 
 ## Download Nextflow
 

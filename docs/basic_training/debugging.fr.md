@@ -49,15 +49,15 @@ Si cela ne suffit pas, `cd` dans le répertoire de travail de la tâche. Il cont
 
 Le répertoire d'exécution de la tâche contient ces fichiers :
 
-- `.command.sh` : Le script de commande.
-- `.command.run` : La commande enveloppée utilisée pour exécuter la tâche.
-- `.command.out` : La sortie standard complète de la tâche.
-- `.command.err` : L'erreur standard de la tâche complète.
-- `.command.log` : La sortie de l'exécution du wrapper.
-- `.command.begin` : Fichier sentinelle créé dès que la tâche est lancée.
-- `.exitcode` : Un fichier contenant le code de sortie de la tâche.
-- Fichiers d'entrée de la tâche (liens symboliques)
-- Fichiers de sortie de la tâche
+-   `.command.sh` : Le script de commande.
+-   `.command.run` : La commande enveloppée utilisée pour exécuter la tâche.
+-   `.command.out` : La sortie standard complète de la tâche.
+-   `.command.err` : L'erreur standard de la tâche complète.
+-   `.command.log` : La sortie de l'exécution du wrapper.
+-   `.command.begin` : Fichier sentinelle créé dès que la tâche est lancée.
+-   `.exitcode` : Un fichier contenant le code de sortie de la tâche.
+-   Fichiers d'entrée de la tâche (liens symboliques)
+-   Fichiers de sortie de la tâche
 
 Vérifiez que le fichier `.command.sh` contient la commande attendue et que toutes les variables sont correctement résolues.
 

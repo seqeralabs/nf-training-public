@@ -21,9 +21,9 @@ Nextflow distinguishes two different kinds of channels: **queue** channels and *
 
 A **queue** channel is an _asynchronous_ unidirectional _FIFO_ queue that connects two processes or operators.
 
-- _asynchronous_ means that operations are non-blocking.
-- _unidirectional_ means that data flows from a producer to a consumer.
-- _FIFO_ means that the data is guaranteed to be delivered in the same order as it is produced. First In, First Out.
+-   _asynchronous_ means that operations are non-blocking.
+-   _unidirectional_ means that data flows from a producer to a consumer.
+-   _FIFO_ means that the data is guaranteed to be delivered in the same order as it is produced. First In, First Out.
 
 A queue channel is implicitly created by process output definitions or using channel factories such as [Channel.of](https://www.nextflow.io/docs/latest/channel.html#of) or [Channel.fromPath](https://www.nextflow.io/docs/latest/channel.html#frompath).
 

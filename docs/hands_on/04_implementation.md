@@ -117,10 +117,10 @@ Now we have our inputs set up we can move onto the processes. In our first proce
 
 The first process has the following structure:
 
-- **Name**: `prepare_genome_samtools`
-- **Command**: create a genome index for the genome fasta with samtools
-- **Input**: the genome fasta file
-- **Output**: the samtools genome index file
+-   **Name**: `prepare_genome_samtools`
+-   **Command**: create a genome index for the genome fasta with samtools
+-   **Input**: the genome fasta file
+-   **Output**: the samtools genome index file
 
 !!! exercise "Problem #2"
 
@@ -218,10 +218,10 @@ Our first process created the genome index for GATK using samtools. For the next
 
 The next process should have the following structure:
 
-- **Name**: `prepare_genome_picard`
-- **Command**: create a genome dictionary for the genome fasta with Picard tools
-- **Input**: the genome fasta file
-- **Output**: the genome dictionary file
+-   **Name**: `prepare_genome_picard`
+-   **Command**: create a genome dictionary for the genome fasta with Picard tools
+-   **Input**: the genome fasta file
+-   **Output**: the genome dictionary file
 
 !!! exercise "Problem #3"
 
@@ -303,10 +303,10 @@ Next we must create a genome index for the [STAR](https://github.com/alexdobin/S
 
 The next process has the following structure:
 
-- **Name**: `prepare_star_genome_index`
-- **Command**: create a STAR genome index for the genome fasta
-- **Input**: the genome fasta file
-- **Output**: a directory containing the STAR genome index
+-   **Name**: `prepare_star_genome_index`
+-   **Command**: create a STAR genome index for the genome fasta
+-   **Input**: the genome fasta file
+-   **Output**: a directory containing the STAR genome index
 
 !!! exercise "Problem #4"
 
@@ -403,12 +403,12 @@ Next on to something a little more tricky. The next process takes two inputs: th
 
 The next process has the following structure:
 
-- **Name**: `prepare_vcf_file`
-- **Command**: create a filtered and recoded set of variants
-- **Input**:
-    - the variants file
-    - the blacklisted regions file
-- **Output**: a tuple containing the filtered/recoded VCF file and the tab index (TBI) file.
+-   **Name**: `prepare_vcf_file`
+-   **Command**: create a filtered and recoded set of variants
+-   **Input**:
+    -   the variants file
+    -   the blacklisted regions file
+-   **Output**: a tuple containing the filtered/recoded VCF file and the tab index (TBI) file.
 
 !!! exercise "Problem #5"
 
@@ -524,13 +524,13 @@ In this process, for each sample, we align the reads to our genome using the STA
 
 The process has the following structure:
 
-- **Name**: `rnaseq_mapping_star`
-- **Command**: mapping of the RNA-Seq reads using STAR
-- **Input**:
-    - the genome fasta file
-    - the STAR genome index
-    - a tuple containing the replicate id and paired read files
-- **Output**: a tuple containing replicate id, aligned bam file & aligned bam file index
+-   **Name**: `rnaseq_mapping_star`
+-   **Command**: mapping of the RNA-Seq reads using STAR
+-   **Input**:
+    -   the genome fasta file
+    -   the STAR genome index
+    -   a tuple containing the replicate id and paired read files
+-   **Output**: a tuple containing replicate id, aligned bam file & aligned bam file index
 
 !!! Exercise "Problem #6"
 
@@ -725,14 +725,14 @@ The process creates `k+1` new reads (where `k` is the number of `N` cigar elemen
 
 The next process has the following structure:
 
-- **Name**: `rnaseq_gatk_splitNcigar`
-- **Command**: split reads on Ns in CIGAR string using GATK
-- **Input**:
-    - the genome fasta file
-    - the genome index made with samtools
-    - the genome dictionary made with picard
-    - a tuple containing replicate id, aligned bam file and aligned bam file index from the STAR mapping
-- **Output**: a tuple containing the replicate id, the split bam file and the split bam index file
+-   **Name**: `rnaseq_gatk_splitNcigar`
+-   **Command**: split reads on Ns in CIGAR string using GATK
+-   **Input**:
+    -   the genome fasta file
+    -   the genome index made with samtools
+    -   the genome dictionary made with picard
+    -   a tuple containing replicate id, aligned bam file and aligned bam file index from the STAR mapping
+-   **Output**: a tuple containing the replicate id, the split bam file and the split bam index file
 
 !!! exercise "Problem #7"
 
@@ -885,15 +885,15 @@ This step uses GATK to detect systematic errors in the base quality scores, sele
 
 The next process has the following structure:
 
-- **Name**: `rnaseq_gatk_recalibrate`
-- **Command**: recalibrate reads from each replicate using GATK
-- **Input**
-    - the genome fasta file
-    - the genome index made with samtools
-    - the genome dictionary made with picard
-    - a tuple containing replicate id, aligned bam file and aligned bam file index from process 3
-    - a tuple containing the filtered/recoded VCF file and the tab index (TBI) file from process 1D
-- **Output**: a tuple containing the sample id, the unique bam file and the unique bam index file
+-   **Name**: `rnaseq_gatk_recalibrate`
+-   **Command**: recalibrate reads from each replicate using GATK
+-   **Input**
+    -   the genome fasta file
+    -   the genome index made with samtools
+    -   the genome dictionary made with picard
+    -   a tuple containing replicate id, aligned bam file and aligned bam file index from process 3
+    -   a tuple containing the filtered/recoded VCF file and the tab index (TBI) file from process 1D
+-   **Output**: a tuple containing the sample id, the unique bam file and the unique bam index file
 
 !!! exercise "Problem #8"
 
@@ -1094,14 +1094,14 @@ This steps call variants with GATK HaplotypeCaller. You can find details of the 
 
 The next process has the following structure:
 
-- **Name**: `rnaseq_call_variants`
-- **Command**: variant calling of each sample using GATK
-- **Input**:
-    - the genome fasta file
-    - the genome index made with samtools
-    - the genome dictionary made with picard
-    - a tuple containing replicate id, aligned bam file and aligned bam file index from process 4
-- **Output**: a tuple containing the sample id the resulting variant calling file (vcf)
+-   **Name**: `rnaseq_call_variants`
+-   **Command**: variant calling of each sample using GATK
+-   **Input**:
+    -   the genome fasta file
+    -   the genome index made with samtools
+    -   the genome dictionary made with picard
+    -   a tuple containing replicate id, aligned bam file and aligned bam file index from process 4
+-   **Output**: a tuple containing the sample id the resulting variant calling file (vcf)
 
 !!! exercise "Problem #9"
 
@@ -1291,20 +1291,20 @@ We must process the VCF result to prepare variants file for allele specific expr
 
 You should implement two processes having the following structure:
 
-- _1st process_
-    - **Name**: `post_process_vcf`
-    - **Command**: post-process the variant calling file (vcf) of each sample
-    - **Input**:
-        - tuple containing the sample ID and vcf file
-        - a tuple containing the filtered/recoded VCF file and the tab index (TBI) file from process 1D
-    - **Output**: a tuple containing the sample id, the variant calling file (vcf) and a file containing common SNPs
-- _2nd process_
-    - **Name**: `prepare_vcf_for_ase`
-    - **Command**: prepare the VCF for allele specific expression (ASE) and generate a figure in R.
-    - **Input**: a tuple containing the sample id, the variant calling file (vcf) and a file containing common SNPs
-    - **Output**:
-        - a tuple containing the sample ID and known SNPs in the sample for ASE
-        - a figure of the SNPs generated in R as a PDF file
+-   _1st process_
+    -   **Name**: `post_process_vcf`
+    -   **Command**: post-process the variant calling file (vcf) of each sample
+    -   **Input**:
+        -   tuple containing the sample ID and vcf file
+        -   a tuple containing the filtered/recoded VCF file and the tab index (TBI) file from process 1D
+    -   **Output**: a tuple containing the sample id, the variant calling file (vcf) and a file containing common SNPs
+-   _2nd process_
+    -   **Name**: `prepare_vcf_for_ase`
+    -   **Command**: prepare the VCF for allele specific expression (ASE) and generate a figure in R.
+    -   **Input**: a tuple containing the sample id, the variant calling file (vcf) and a file containing common SNPs
+    -   **Output**:
+        -   a tuple containing the sample ID and known SNPs in the sample for ASE
+        -   a figure of the SNPs generated in R as a PDF file
 
 !!! exercise "Problem #10"
 
@@ -1615,14 +1615,14 @@ Now we are ready for the final process.
 
 The next process has the following structure:
 
-- **Name**: `ASE_knownSNPs`
-- **Command**: calculate allele counts at a set of positions with GATK tools
-- **Input**:
-    - genome fasta file
-    - genome index file from samtools
-    - genome dictionary file
-    - the `grouped_vcf_bam_bai_ch` channel
-- **Output**: the allele specific expression file (`ASE.tsv`)
+-   **Name**: `ASE_knownSNPs`
+-   **Command**: calculate allele counts at a set of positions with GATK tools
+-   **Input**:
+    -   genome fasta file
+    -   genome index file from samtools
+    -   genome dictionary file
+    -   the `grouped_vcf_bam_bai_ch` channel
+-   **Output**: the allele specific expression file (`ASE.tsv`)
 
 !!! exercise "Problem #12"
 

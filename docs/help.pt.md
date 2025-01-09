@@ -13,8 +13,8 @@ Nossa incrível comunidade é um dos grandes pontos fortes do Nextflow!
 
 Existem duas instâncias relevantes do Slack:
 
-- Nextflow ([inscreva-se aqui](https://www.nextflow.io/slack-invite.html))
-- nf-core ([inscreva-se aqui](https://nf-co.re/join/slack))
+-   Nextflow ([inscreva-se aqui](https://www.nextflow.io/slack-invite.html))
+-   nf-core ([inscreva-se aqui](https://nf-co.re/join/slack))
 
 Geralmente, o Slack do Nextflow é melhor, pois atende a toda a comunidade.
 A exceção é se você estiver seguindo o treinamento através de um workshop organizado pelo projeto nf-core. Nesse caso, você deve ter sido informado sobre onde fazer perguntas.

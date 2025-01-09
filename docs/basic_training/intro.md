@@ -11,9 +11,9 @@ It is designed around the idea that the Linux platform is the _lingua franca_ of
 
 Nextflow extends this approach, adding the ability to define complex program interactions and a high-level parallel computational environment, based on the dataflow programming model. Nextflow’s core features are:
 
-- Workflow portability and reproducibility
-- Scalability of parallelization and deployment
-- Integration of existing tools, systems, and industry standards
+-   Workflow portability and reproducibility
+-   Scalability of parallelization and deployment
+-   Integration of existing tools, systems, and industry standards
 
 ## Processes and Channels
 
