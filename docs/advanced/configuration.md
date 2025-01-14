@@ -14,7 +14,7 @@ This gives us two complications:
 3. Config file specified using the `-c my_config option`
 4. The config file named `nextflow.config` in the current directory
 5. The config file named `nextflow.config` in the workflow project directory
-6. The config file `$HOME/.nextflow/config`
+6. The config file `$HOME/.nextflow/config`, or `$NXF_HOME/.nextflow/config` when `NXF_HOME` is set (see [`NXF` variable docs](reference/env-vars.html#nextflow-settings))
 7. Values defined within the pipeline script itself (e.g. `main.nf`)
 
 !!! note "Precedence is in order of 'distance'"

@@ -41,30 +41,23 @@ Follow these steps to set up your token:
 
 ### 1.2. Run Nextflow CLI with Seqera Platform visualizing and capturing logs
 
-Run a Nextflow workflow with the addition of the `-with-tower` command:
+Run the 'nf-hello-world' workflow you may have encountered in earlier sessions, with the addition of the `-with-tower` command:
 
 ```bash
-nextflow run nextflow-io/hello -with-tower
+nextflow run seqeralabs/nf-hello-world -profile demo --outdir hello -with-tower
 ```
 
 You will see output similar to the following:
 
 ```console title="Output"
- N E X T F L O W   ~  version 24.04.4
+ N E X T F L O W   ~  version 24.10.2
 
-Launching `https://github.com/nextflow-io/hello` [evil_engelbart] DSL2 - revision: afff16a9b4 [master]
+Launching `https://github.com/seqeralabs/nf-hello-world` [thirsty_hoover] DSL2 - revision: 8274d3d10c [master]
 
-Downloading plugin nf-tower@1.9.1
-Monitor the execution with Seqera Platform using this URL: https://cloud.seqera.io/user/kenbrewer/watch/5Gs0qqV9Y9rguE
-executor >  local (4)
-[80/810411] process > sayHello (1) [100%] 4 of 4 ✔
-Ciao world!
-
-Bonjour world!
-
-Hola world!
-
-Hello world!
+Monitor the execution with Seqera Platform using this URL: https://cloud.seqera.io/user/jonathan-manning2/watch/3kLeKzzjHBzB7D
+executor >  local (6)
+[40/c954b7] process > sayHello (2)       [100%] 3 of 3 ✔
+[2f/8162ff] process > convertToUpper (3) [100%] 3 of 3 ✔
 ```
 
 Hold ++ctrl++ or ++cmd++ and click on the link to open it in your browser.
@@ -76,7 +69,11 @@ You will see and be able to monitor your **Nextflow jobs** in Seqera Platform.
 
 ### 1.3. Set up Seqera Platform in Nextflow configuration
 
-Doing that token setup regularly can become tedious, so let's set this configuration for all our pipeline runs with the global Nextflow configuration file located at `$HOME/.nextflow/config`.
+Doing that token setup regularly can become tedious, so let's set this configuration for all our pipeline runs with the global Nextflow configuration file located at `$NXF_HOME/.nextflow/config`.
+
+!!! hint "Home directory configuration"
+
+    If `NFX_HOME` is not set, these changes would be added to `$HOME/.nextflow/config`
 
 Before we set the configuration, we need to permanently store the token from our environment in Nextflow using a [Nextflow secret](https://www.nextflow.io/docs/latest/secrets.html):
 
@@ -90,15 +87,15 @@ Make sure your token was saved using:
 nextflow secrets get tower_access_token
 ```
 
-Next, open the Nextflow configuration file located at `$HOME/.nextflow/config`:
+Next, open the Nextflow configuration file located at `$NXF_HOME/.nextflow/config`:
 
 ```bash
-code $HOME/.nextflow/config
+code $NXF_HOME/.nextflow/config
 ```
 
 Then add the following block of configuration:
 
-```groovy title="$HOME/.nextflow/config"
+```groovy title="$NXF_HOME/.nextflow/config"
 tower {
     enabled = true
     endpoint = "https://api.cloud.seqera.io"
@@ -120,20 +117,14 @@ nextflow run nextflow-io/hello
 You will see the following output:
 
 ```console title="Output"
- N E X T F L O W   ~  version 24.04.4
+  N E X T F L O W   ~  version 24.10.3
 
-Launching `https://github.com/nextflow-io/hello` [fabulous_euclid] DSL2 - revision: afff16a9b4 [master]
+Launching `https://github.com/seqeralabs/nf-hello-world` [golden_moriondo] DSL2 - revision: 8274d3d10c [master]
 
-Monitor the execution with Seqera Platform using this URL: https://cloud.seqera.io/user/kenbrewer/watch/KYjRktIlOuxrh
-executor >  local (4)
-[71/eaa915] process > sayHello (3) [100%] 4 of 4 ✔
-Ciao world!
-
-Bonjour world!
-
-Hola world!
-
-Hello world!
+Monitor the execution with Seqera Platform using this URL: https://cloud.seqera.io/user/jonathan-manning2/watch/1lzYhUz4ziHcYD
+executor >  local (6)
+[30/30a42c] process > sayHello (3)       [100%] 3 of 3 ✔
+[ea/293e98] process > convertToUpper (3) [100%] 3 of 3 ✔
 ```
 
 Note that we are logging to Seqera Platform even though we did not use the `-with-tower` command!
@@ -147,8 +138,8 @@ If you ran your pipeline from the `hello_nextflow` directory, you'll see somethi
 
 Notice that configuration for our pipeline run is being run pulled from three separate files:
 
-- `/home/gitpod/.nextflow/config` - This is the global configuration file we just added.
-- `/home/gitpod/.nextflow/assets/nextflow-io/hello/nextflow.config` - This is the `nextflow.config` file from the `nextflow-io/hello` repository.
+- `/workspace/gitpod/.nextflow/config` - This is the global configuration file we just added.
+- `/workspace/gitpod/.nextflow/assets/seqeralabs/nf-hello-world/nextflow.config` - This is the `nextflow.config` file from the `seqeralabs/nf-hello-world` repository.
 - `/workspace/gitpod/nf-training/hello-nextflow/nextflow.config` - This is the `nextflow.config` file from our current working directory.
 
 Nextflow resolves these configurations at runtime with a [specific order of precedence](https://www.nextflow.io/docs/latest/config.html#configuration-file).

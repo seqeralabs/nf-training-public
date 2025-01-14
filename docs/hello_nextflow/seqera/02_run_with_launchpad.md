@@ -10,7 +10,7 @@ Next we want to start using Seqera Platform to launch Nextflow workflows on our 
 
 !!! tip "Trainer Tip"
 
-    Launch a test run of the nf-core/rnaseq pipeline in the community/showcase workspace prior to starting this session, so you'll have a recent run for participants to inspect.
+    Launch a test run of the seqeralabs/nf-hello-genomics pipeline in the community/showcase workspace prior to starting this session, so you'll have a recent run for participants to inspect.
 
 ### 2.1. Navigate to the community/showcase workspace
 
@@ -21,18 +21,18 @@ Each user has an allotted amount of free compute to use in this workspace.
 Click on your username in the top left corner of the screen to bring up the list of organizations and workspaces you have access to.
 Select the `community/showcase` workspace.
 
-### 2.2. Launch a test run of nf-core/rnaseq pipeline
+### 2.2. Launch a test run of seqeralabs/nf-hello-genomics pipeline
 
 In the `community/showcase` workspace, you will see a list of pipelines that have been set up by the workspace owner for you to run.
 Follow these steps to launch a test run of a pipeline:
 
 ![Launchpad](seqera/img/launchpad.gif)
 
-1. Find the `nf-core-rnaseq` pipeline in the list of pipelines.
+1. Find the `nf-hello-genomics` pipeline in the list of pipelines (this is the same workflow you may have encountered in the [Hello Genomics](../06_hello_config.md) module).
 2. Click on the `Launch` button to bring up the launch form.
-3. Change the "Workflow run name" to "<username>-rnaseq-test".
+3. Change the "Workflow run name" to "<username>-hellogenomics-test".
 4. Click "Next" to bring up the parameters form.
-5. Find the `trimmer` parameter and change it to `fastp`.
+5. Take a look at the options. Feel free to take a moment to understand them, referring to [Hello Genomics](../06_hello_config.md) as needed.
 6. Click on "Next" to inspect the advanced configuration.
 7. Click "Launch" to start the pipeline!
 
@@ -54,7 +54,7 @@ It may take some time for the pipeline to start running while AWS Batch spins up
 ### 2.4. Inspect a pipeline run
 
 Scroll down to find the list of tasks that were executed in the pipeline run.
-For example, by searching for `fastq` we can find the task `NFCORE_RNASEQ:RNASEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP (WT_REP2)` that was executed as part of the pipeline.
+For example, by searching for `GATK_JOINTGENOTYPING` we can find the main genotyping process that was executed as part of the pipeline.
 
 Click on the task to see the task details:
 
